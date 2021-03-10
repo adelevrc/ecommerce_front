@@ -1,0 +1,24 @@
+.logo{
+    max-width: 5em;
+    max-height: 4em;
+    margin: 0.5em;
+  }
+
+  .cart{
+    width: 2rem;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* border: solid 1px black; */
+    min-height: 5rem;
+    /* background-color: #426696; */
+  }
+  
+  nav:hover {
+    /* background-color: rgba(54, 161, 165, 0.2); */
+    background-color:rgba(78, 111, 155, 1); 
+    border: none;
+  }
