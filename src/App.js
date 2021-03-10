@@ -19,6 +19,8 @@ import useToken from './components/useToken';
 import ProtectedRoutes from './components/ProtectedRoutes/ProtectedRoutes';
 import Profile from './components/ProtectedRoutes/Profile'; 
 
+import NotFoundPage from './components/NotFoundPage/NotFoundPage'; 
+
 
 function App() {
 
@@ -51,20 +53,20 @@ function App() {
 
         <Switch>
 
-        <Route path="/" exact>
+          <Route path="/" exact>
             <LandingPage 
-            />
-        </Route>
-
-          <Route path="/articles" exact>
-            <Articles 
-            cart={cart}
-            setCart = {setCart} 
-            numberOfCartItems={numberOfCartItems}
             />
           </Route>
 
-          <Route path="/articles/:_id"  component={Article} /> 
+          <Route path="/articles" exact>
+            <Articles 
+              cart={cart}
+              setCart = {setCart} 
+              numberOfCartItems={numberOfCartItems}
+              />
+          </Route>
+
+          <Route path="/articles/:_id" exact  component={Article} /> 
 
           <Route path="/cart" exact >
             <CartList 
@@ -80,7 +82,7 @@ function App() {
               token={token} />
 
 
-          <Route path="/dashboard">
+          <Route path="/dashboard" exact>
             <Dashboard 
               token={token}
               setToken={setToken} 
@@ -88,12 +90,14 @@ function App() {
           </Route> 
 
 
-          <Route path="/authentification">
+          <Route path="/authentification" exact>
             <Authentification
               token={token}
               setToken={setToken}
             />
           </Route>
+
+          <Route component={NotFoundPage} />
 
         </Switch>
 

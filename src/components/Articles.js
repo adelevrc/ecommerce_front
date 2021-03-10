@@ -20,7 +20,6 @@ const Articles = ({cart , setCart}) => {
     const addToCart = (article) => {
             setCart([...cart, article]); 
             localStorage.setItem('articleCart', JSON.stringify(cart)); 
-           
     }
 
     return(
