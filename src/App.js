@@ -17,6 +17,8 @@ import CartList from './components/Cart/CartList';
 import Dashboard from './components/Dashboard'; 
 import useToken from './components/useToken'; 
 import ProtectedRoutes from './components/ProtectedRoutes/ProtectedRoutes';
+import ProtectedRoutesRoles from './components/ProtectedRoutes/ProtectedRoutesRoles';
+
 import Profile from './components/ProtectedRoutes/Profile'; 
 
 import NotFoundPage from './components/NotFoundPage/NotFoundPage'; 
@@ -25,6 +27,7 @@ import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 function App() {
 
   const { token, setToken } = useToken();
+  console.log(token); 
   const localCart = JSON.parse(localStorage.getItem('articleCart')) || []; 
   const [cart, setCart] = useState(localCart); 
 
@@ -75,7 +78,9 @@ function App() {
             />
           </Route>
 
-          <Route path="/create" exact component={AddArticle} />
+          <ProtectedRoutesRoles path="/create" exact 
+            component={AddArticle} 
+            token={token}/>
 
           <ProtectedRoutes path="/profile" exact 
               component={Profile} 
