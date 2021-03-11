@@ -9,12 +9,11 @@ import './App.css';
 
 import Nav from './components/Nav'; 
 import LandingPage from './components/LandingPage'; 
-import Articles from'./components/Articles'; 
-import Article from './components/Article'; 
-import AddArticle from './components/AddArticle'; 
+import Articles from'./components/Products/Articles'; 
+import Article from './components/Products/Article'; 
+import AddArticle from './components/Products/AddArticle'; 
 import CartList from './components/Cart/CartList';
 
-import Dashboard from './components/Dashboard'; 
 import useToken from './components/useToken'; 
 import ProtectedRoutes from './components/ProtectedRoutes/ProtectedRoutes';
 import ProtectedRoutesRoles from './components/ProtectedRoutes/ProtectedRoutesRoles';
@@ -27,7 +26,6 @@ import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 function App() {
 
   const { token, setToken } = useToken();
-  console.log(token); 
   const localCart = JSON.parse(localStorage.getItem('articleCart')) || []; 
   const [cart, setCart] = useState(localCart); 
 
@@ -86,13 +84,6 @@ function App() {
               component={Profile} 
               token={token} />
 
-
-          <Route path="/dashboard" exact>
-            <Dashboard 
-              token={token}
-              setToken={setToken} 
-            />
-          </Route> 
 
 
           <Route path="/authentification" exact>

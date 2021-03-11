@@ -288,3 +288,6 @@ main ::placeholder{
     display: none;
   }
 
+  .not-auth-component{
+    display: none;
+  }

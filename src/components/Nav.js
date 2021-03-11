@@ -30,10 +30,6 @@ const Nav = ({token, numberOfCartItems}) => {
                 <h1> Animaux</h1>
             </Link>
 
-            <Link style={{ textDecoration: 'none' }} to={`/create`}>
-                    <h1> Créer article </h1>
-            </Link>
-
             <Link style={{ textDecoration: 'none' }} to={`/cart`}>
                 <Badge badgeContent={numberOfCartItems()} color="primary"
                 anchorOrigin={{

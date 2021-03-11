@@ -1,12 +1,10 @@
 import React from 'react'; 
 import {Route, Redirect} from 'react-router-dom'; 
 
-const ProtectedRoutes = ({ token , component : Component, ...rest}) => {
+const ProtectedRoutesRoles = ({ token , component : Component, ...rest}) => {
 
     const tokenString = localStorage.getItem('token');
-    console.log(tokenString);
     const userToken = JSON.parse(tokenString);
-    console.log(userToken);
 
 
     return <Route {...rest} render={(props) => {
@@ -21,4 +19,4 @@ const ProtectedRoutes = ({ token , component : Component, ...rest}) => {
     
 }
 
-export default ProtectedRoutes; 
+export default ProtectedRoutesRoles; 
