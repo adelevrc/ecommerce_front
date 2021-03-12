@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 import axios from 'axios'; 
 
 
-
 const Articles = ({cart , setCart}) => {
 
     const [articles, setArticles] = useState([]);
     const [searchTerm, setSearchTerm] = useState(''); 
+    let URL = process.env.REACT_APP_API_URL; 
 
     useEffect(() =>{
-        axios.get("http://localhost:8000/posts")
+
+        console.log(URL); 
+        axios.get(`${URL}/posts`)
         .then(data => {
             setArticles(data.data); 
         })
