@@ -5,22 +5,11 @@ import { v4 as uuidv4 } from "uuid";
 
 const CartList = ({ cart, setCart}) => {
 
-    // useEffect(() => {
-    //     getCart();
-    // }, []);
-
     useEffect(() => {
         total()
     }); 
 
-    // const[cartItems, setCartItems] = useState([]); 
     const [cartTotal, setCartTotal] = useState(0); 
-
-    // const getCart = () => {
-    //     const localStorageCart = JSON.parse(localStorage.getItem('articleCart'));
-    //     setCart(localStorageCart); 
-    //     return localStorageCart; 
-    // }
     
     const total = () => {
         let totalVal = 0; 

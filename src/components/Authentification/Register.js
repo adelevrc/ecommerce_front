@@ -6,8 +6,10 @@ const Register = () => {
     const [userEmailReg, setUserEmailReg] = useState(''); 
     const [userPasswordReg, setUserPasswordReg] = useState(''); 
 
+    let API_URL = process.env.REACT_APP_API_URL;
+
     const register = () => {
-        axios.post('http://localhost:8000/auth/signup', { 
+        axios.post(`${API_URL}/auth/signup`, { 
             email: userEmailReg, 
             password: userPasswordReg 
         })

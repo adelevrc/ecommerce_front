@@ -7,12 +7,12 @@ const Articles = ({cart , setCart}) => {
 
     const [articles, setArticles] = useState([]);
     const [searchTerm, setSearchTerm] = useState(''); 
-    let URL = process.env.REACT_APP_API_URL; 
+    let API_URL = process.env.REACT_APP_API_URL; 
 
     useEffect(() =>{
 
-        console.log(URL); 
-        axios.get(`${URL}/posts`)
+
+        axios.get(`${API_URL}/posts`)
         .then(data => {
             setArticles(data.data); 
         })

@@ -22,9 +22,9 @@ function AddArticle() {
       setSubmitting(false);
     }, 3000)
     
-     
+    let API_URL = process.env.REACT_APP_API_URL;
 
-    axios.post('http://localhost:8000/posts', formData)
+    axios.post(`${API_URL}/posts`, formData)
     .then(res => {
     console.log(`form data : ${formData}`);
     })

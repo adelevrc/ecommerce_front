@@ -11,21 +11,15 @@ const Profile = () => {
 
     const localStorageToken = JSON.parse(localStorage.getItem('token'));
     const userId = localStorageToken.userId
-    
 
-
-    // if(userRole === "admin"){
-    //     setIsAdmin(true); 
-    // } else {
-    //     setIsAdmin(false);
-    // }
+    let API_URL = process.env.REACT_APP_API_URL;
 
         useEffect(() => {
         fetchUser(); 
      }, [])
 
     const fetchUser =  async () => {
-        const fetchUser = await fetch (`http://localhost:8000/auth/${userId}`); 
+        const fetchUser = await fetch (`${API_URL}/auth/${userId}`); 
         const user = await fetchUser.json(); 
         setUser(user); 
 

@@ -4,7 +4,10 @@ import { useHistory } from "react-router-dom";
 import s from '../styles/connexion.module.css'; 
 
 async function loginUser(credentials) {
-    return fetch('http://localhost:8000/auth/login', {
+  
+  let API_URL = process.env.REACT_APP_API_URL;
+
+    return fetch(`${API_URL}/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
