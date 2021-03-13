@@ -10,6 +10,12 @@ const CartList = ({ cart, setCart}) => {
     }); 
 
     const [cartTotal, setCartTotal] = useState(0); 
+    const [orders, setOrders] = useState(0); 
+
+    let API_URL = process.env.REACT_APP_API_URL;
+
+    const localStorageToken = JSON.parse(localStorage.getItem('token'));
+
     
     const total = () => {
         let totalVal = 0; 
@@ -18,6 +24,19 @@ const CartList = ({ cart, setCart}) => {
         }
         setCartTotal(totalVal); 
     }
+
+    const addCheckout = async () => {
+        
+        if (localStorageToken === null){
+            console.log('Nul'); 
+        } else {
+        const fetchOrders = await fetch(`${API_URL}/orders`);
+        const checkout = await fetchOrders.json();
+        setOrders(checkout);
+        console.log(orders); 
+        }
+    }
+    
 
     return(
         <div className="container-cart">
@@ -37,6 +56,8 @@ const CartList = ({ cart, setCart}) => {
                 <div className="div-price">
                   <p> Total : {cartTotal} </p>
                 </div>
+
+                <button onClick = {() => addCheckout()}> </button>
         </div>
     )
 
