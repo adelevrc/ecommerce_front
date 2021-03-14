@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios'; 
 import { v4 as uuidv4 } from "uuid";
 import { Link } from 'react-router-dom';
+import s from '../../styles/animal.module.css'
 
 
 
@@ -19,19 +20,23 @@ const AnimalsList = () => {
     }, [])
 
     return(
-        <div className='animals-container'>
-            {animals.map((animal) =>
-                <div className="animal-container" key={uuidv4()}>
-                    <figure>
+        <div className={s.container}>
+            <h1 className={s.h1BlueCenteredUppercase}> Nos rescapés </h1>
+            <div className={s.containerAllAnimal}>
+                {animals.map((animal) =>
+                    <div className={s.containerOneAnimal} key={uuidv4()}>
+                        <figure>
+                            <Link to={`/animals/${animal._id}`}>
+                                <img className="img-small"src={animal.image} alt={animal.name} />
+                            </Link>
+                        </figure>
+                        <h2 className={s.h2NameAnimalBlue}>{animal.name} </h2>
                         <Link to={`/animals/${animal._id}`}>
-                            <img className="img-small"src={animal.image} alt={animal.name} />
+                            <button className={s.greenSmallBtn}> Voir </button>
                         </Link>
-                    </figure>
-                    <h1> {animal.name} </h1>
-                </div>
-                
-                
-            )};
+                    </div>
+                )}
+            </div>
         </div>
 
     )

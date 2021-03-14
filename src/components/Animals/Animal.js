@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'; 
+import s from '../../styles/animal.module.css'; 
 
 const Animal = ({ match }) => {
     
@@ -19,14 +20,12 @@ const Animal = ({ match }) => {
         
     }
     return (
-        <div>
-            <h1> Hello </h1>
-        <div className="div-cart">
-            <img src={animal.image} alt={animal.name}/>
-            <div className="div-cart-title-price">
-                <h2> {animal.name} </h2>
+        <div className={s.animaContainer}>
+        <div className={s.animalDetails}>
+            <img className="img-large"src={animal.image} alt={animal.name}/>
+            <h2> {animal.name} </h2>
                 <p> {animal.description}</p>                    
-            </div>
+            
         </div>
     </div>
 

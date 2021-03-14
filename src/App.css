@@ -17,6 +17,12 @@ background: linear-gradient(
   rgba(255, 255, 255, 0.5));
 }
 
+p{
+  font-size: 0.9rem;
+  margin: 0 1rem;
+  font-weight: 300;
+
+}
 h1{
   color:black;
   font-weight: 500;
@@ -103,6 +109,11 @@ h3{
     width: 20vh;
     margin: 1rem;
 }
+
+.img-large{
+  height: 35vh;
+    width: 50vh;
+}
 .img-single-article{
   max-width: 80%;
   max-height: 70vh;
@@ -154,11 +165,13 @@ main ::placeholder{
     min-height: 2rem;
     font-weight: 600;
     background-color: rgb(95, 158, 160, 0.5);
-    /* opacity: 0.5;    */
     color:#DEF1DD;
     cursor: pointer;
     transition-duration: 0.5s;
   }
+
+
+ 
 
   button:hover {
     background-color: #B2F1D0; 
