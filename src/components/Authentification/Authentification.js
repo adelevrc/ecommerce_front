@@ -1,7 +1,7 @@
 import React from 'react'; 
 import Login from './Login'; 
 import Register from './Register'; 
-import s from '../../styles/connexion.module.css'
+import '../../styles/Login.scss'; 
 
 const Authentification = ({ 
     token, 
@@ -9,7 +9,7 @@ const Authentification = ({
     setIsAuth}) => {
 
     return(
-        <div className={s.authentificationdiv}> 
+        <div className="authentificationdiv"> 
             <Login
              token={token}
              setToken={setToken}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from "react-router-dom";
-import s from '../../styles/connexion.module.css'; 
+import '../../styles/Login.scss'; 
 
 async function loginUser(credentials) {
   
@@ -33,7 +33,7 @@ export default function Login({ setToken }) {
   }
 
   return(
-    <div className={s.formlogin}>
+    <div className="formlogin">
       <h1>Connectez vous</h1>
       <form onSubmit={handleSubmit}>
         <label>
@@ -45,7 +45,7 @@ export default function Login({ setToken }) {
           <input type="password" onChange={e => setPassword(e.target.value)}/>
         </label>
         <div>
-          <button type="submit"> Connexion</button>
+          <button className="login-btn" type="submit"> Connexion</button>
         </div>
       </form>
       

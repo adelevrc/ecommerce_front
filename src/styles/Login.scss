@@ -1,0 +1,95 @@
+.authentificationdiv{
+    display: flex;
+    flex-direction: column;
+}
+
+  .formlogin, .formregister {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50vh;
+    border: none;
+    
+  }
+  .formlogin{
+    background-color:#426696;
+
+    h1{
+        font-size: 1rem;
+        font-weight: 800;
+        text-align: center;
+        margin: 1rem 0;
+        color: wheat;
+    }
+
+    p{
+        margin: 1rem 0;
+        color: wheat;
+    }
+
+    input{
+        padding: 1rem;
+        border-radius: 10px;
+        border: none;
+        width: 15rem;
+        height: 2rem;
+        background-color: cadetblue;
+        opacity: 0.5;
+        color: white;
+    }
+  }
+  .login-btn, .register-btn{
+      background-color: wheat;
+      color: cadetblue;
+      font-size: 0.7rem;
+      margin: 1rem 0;
+  }
+
+  .formregister{
+    background-color:#4e6f9b; 
+    h1{
+        font-size: 1rem;
+        font-weight: 800;
+        text-align: center;
+        margin: 1rem 0;
+        color: wheat;
+    }
+    p{
+        margin: 1rem 0;
+        color: wheat;
+    }
+
+    input{
+        padding: 1rem;
+        border-radius: 10px;
+        border: none;
+        width: 15rem;
+        height: 2rem;
+        background-color: cadetblue;
+        opacity: 0.5;
+        color: white;
+    }
+  }
+
+
+
+  .myaccount{
+    display: flex;
+    flex-direction: column;
+    background-color: cadetblue;
+    height: 50vh;
+    align-items: center;  
+  }
+
+  @media screen and (min-width: 700px) {
+    .authentificationdiv{
+        display: grid; 
+        grid-template-columns: 50% 50%;
+      }
+
+      .formlogin, .formregister {
+        height: 100vh;
+        
+      }
+    }

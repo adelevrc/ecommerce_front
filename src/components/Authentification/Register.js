@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios'; 
-import s from '../../styles/connexion.module.css'; 
+import '../../styles/Login.scss'; 
 
 const Register = () => {
     const [userEmailReg, setUserEmailReg] = useState(''); 
@@ -22,7 +22,7 @@ const Register = () => {
     }
 
     return(
-        <div className={s.formregister}>
+        <div className="formregister">
             <h1> Créer un compte </h1>
             <form onSubmit={register}>
                 <label> <p> Email </p> </label>
@@ -40,7 +40,7 @@ const Register = () => {
                     }}
                 />
                 <div>
-                <button> M'enregistrer </button>
+                <button className="register-btn"> M'enregistrer </button>
                 </div>
             </form>
         </div>
