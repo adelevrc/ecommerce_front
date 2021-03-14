@@ -14,6 +14,9 @@ import Article from './components/Products/Article';
 import AddArticle from './components/Products/AddArticle'; 
 import CartList from './components/Cart/CartList';
 
+import Animals from './components/Animals/AnimalsList'; 
+import Animal from './components/Animals/Animal'
+
 import useToken from './components/useToken'; 
 import ProtectedRoutes from './components/ProtectedRoutes/ProtectedRoutes';
 import ProtectedRoutesRoles from './components/ProtectedRoutes/ProtectedRoutesRoles';
@@ -79,6 +82,12 @@ function App() {
           <ProtectedRoutesRoles path="/create" exact 
             component={AddArticle} 
             token={token}/>
+
+          <Route path="/animals" exact>
+            <Animals />
+          </Route>
+
+          <Route path="/animals/:_id" exact component={Animal} /> 
 
           <ProtectedRoutes path="/profile" exact 
               component={Profile} 

@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from 'react'; 
 import CartItem from './CartItem'; 
 import { v4 as uuidv4 } from "uuid";
+// import Popup from '../Popup/PopupConnexion';
+import s from '../../styles/popupconnexion.module.css'
+
+// import PopUp from '../Popup/PopupConnexion'; 
 
 
 const CartList = ({ cart, setCart}) => {
@@ -11,12 +15,17 @@ const CartList = ({ cart, setCart}) => {
 
     const [cartTotal, setCartTotal] = useState(0); 
     const [orders, setOrders] = useState(0); 
-
+    const [seen, setSeen] = useState(false); 
+   
     let API_URL = process.env.REACT_APP_API_URL;
 
     const localStorageToken = JSON.parse(localStorage.getItem('token'));
 
-    
+
+    const togglePop = () => {
+        setSeen(true); 
+    };
+
     const total = () => {
         let totalVal = 0; 
         for (let i = 0; i < cart.length; i++){
@@ -29,6 +38,7 @@ const CartList = ({ cart, setCart}) => {
         
         if (localStorageToken === null){
             console.log('Nul'); 
+            togglePop(); 
         } else {
         const fetchOrders = await fetch(`${API_URL}/orders`);
         const checkout = await fetchOrders.json();
@@ -57,7 +67,8 @@ const CartList = ({ cart, setCart}) => {
                   <p> Total : {cartTotal} </p>
                 </div>
 
-                <button onClick = {() => addCheckout()}> </button>
+                <button href={s.popup1} onClick = {() => addCheckout()}> </button>
+
         </div>
     )
 

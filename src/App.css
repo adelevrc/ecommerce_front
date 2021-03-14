@@ -291,3 +291,7 @@ main ::placeholder{
   .not-auth-component{
     display: none;
   }
+
+  .no-display-popup{
+    display: none;
+  }

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios'; 
-import s from '../styles/connexion.module.css'; 
+import s from '../../styles/connexion.module.css'; 
 
 const Register = () => {
     const [userEmailReg, setUserEmailReg] = useState(''); 

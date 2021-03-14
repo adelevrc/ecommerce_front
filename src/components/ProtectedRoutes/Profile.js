@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'; 
 import {withRouter} from 'react-router-dom'; 
 import { Link } from 'react-router-dom';
-import s from '../styles/connexion.module.css'; 
+import s from '../../styles/connexion.module.css'; 
 
 
 const Profile = () => {

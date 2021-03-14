@@ -3,7 +3,7 @@ import shark from '../img/life-saver.svg';
 import promotion from '../img/promotion.svg'; 
 import planetearth from '../img/planet-earth.svg'; 
 import lifesaver from '../img/life-saver.svg'; 
-import s from './styles/landing-page.module.css'
+import s from './../styles/landing-page.module.css'
 
 // import SupportUs from './SupportUs'
 // import AliceCarousel from './Carrousel'; 

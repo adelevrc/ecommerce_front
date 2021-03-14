@@ -10,8 +10,6 @@ const Articles = ({cart , setCart}) => {
     let API_URL = process.env.REACT_APP_API_URL; 
 
     useEffect(() =>{
-
-
         axios.get(`${API_URL}/posts`)
         .then(data => {
             setArticles(data.data); 

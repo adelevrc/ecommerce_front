@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import Badge from '@material-ui/core/Badge';
-import s from './styles/nav.module.css'; 
+import s from './../styles/nav.module.css'; 
 import logo from '../img/logo-noir.png'; 
 import cart from '../img/cart-black.svg'; 
 

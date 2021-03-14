@@ -7,7 +7,7 @@ const Article = ({ match }) => {
     }, [])
 
     const [article, setArticle] = useState([]);
-    let API_URL = process.env.REACT_APP_API_URL;
+    const API_URL = process.env.REACT_APP_API_URL;
 
     const fetchArticle = async () => {
         const fetchArticle = await fetch(`${API_URL}/posts/${match.params._id}`);
