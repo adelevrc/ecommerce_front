@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'; 
-import s from '../../styles/animal.module.css'; 
+import '../../styles/Animal.scss'
 
 const Animal = ({ match }) => {
     
@@ -20,13 +20,12 @@ const Animal = ({ match }) => {
         
     }
     return (
-        <div className={s.animaContainer}>
-        <div className={s.animalDetails}>
-            <img className="img-large"src={animal.image} alt={animal.name}/>
+        <div className="container">
             <h2> {animal.name} </h2>
-                <p> {animal.description}</p>                    
-            
-        </div>
+            <div className="details">
+                <img src={animal.image} alt={animal.name}/>
+                <p> {animal.description}</p>                      
+            </div>
     </div>
 
     )
