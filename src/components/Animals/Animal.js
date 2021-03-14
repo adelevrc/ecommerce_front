@@ -20,7 +20,7 @@ const Animal = ({ match }) => {
         
     }
     return (
-        <div className="container">
+        <div className="container-animal">
             <h2> {animal.name} </h2>
             <div className="details">
                 <img src={animal.image} alt={animal.name}/>

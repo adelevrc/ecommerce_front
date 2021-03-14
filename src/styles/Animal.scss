@@ -1,10 +1,8 @@
-.container{
+.container-animal{
     display: flex;
     flex-direction: column;
-    justify-content:center;
-
+    align-items: center;
     h2{
-        color: rgba(78, 111, 155, 1);
         font-weight: 600;
         text-transform: uppercase;
         margin: 0.5rem 0;
@@ -30,60 +28,60 @@
     }
 }
 
-@media screen and (min-width: 1281px) {
+// @media screen and (min-width: 1281px) {
 
-    .container{
-        h2{
-        font-size: 1.5rem;
-        margin: 1rem 0;
+//     .container{
+//         h2{
+//         font-size: 2rem;
+//         margin: 1rem 0;
 
-        }
-    }
+//         }
+//     }
 
-    .details{
+//     .details{
 
-        img{
-            height: 50vh;
-            width: 75vh;
-        }
-        p{
-            font-size: 1.2rem;
-            width: 85vh;
-            text-align: center;
-            // color: aquamarine;
-        }
-    }
-}    
+//         img{
+//             height: 50vh;
+//             width: 75vh;
+//         }
+//         p{
+//             font-size: 1.2rem;
+//             width: 85vh;
+//             text-align: center;
+//             // color: aquamarine;
+//         }
+//     }
+// }    
 
-@media screen and (min-width: 1025px) {
+// @media screen and (min-width: 1025px) {
 
-    .container{
-        h2{
-        font-size: 1.5rem;
-        margin: 1rem 0;
+//     .container{
+//         h2{
+//         font-size: 1.5rem;
+//         margin: 1rem 0;
 
-        }
-    }
+//         }
+//     }
 
-    .details{
+//     .details{
 
-        img{
-            height: 50vh;
-            width: 75vh;
-        }
-        p{
-            font-size: 1.2rem;
-            width: 85vh;
-            text-align: center;
-            // color: aquamarine;
-        }
-    }
+//         img{
+//             height: 50vh;
+//             width: 75vh;
+//         }
+//         p{
+//             font-size: 1.2rem;
+//             width: 85vh;
+//             text-align: center;
+//             // color: aquamarine;
+//         }
+//     }
   
-  }
+//   }
   @media screen and (min-width: 700px) {
-    .container{
+    .container-animal{
         h2{
-        font-size: 1.5rem;
+        font-size:  2rem;
         margin: 1rem 0;
 
         }

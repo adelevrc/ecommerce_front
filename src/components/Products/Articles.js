@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios'; 
+import '../../styles/Articles.scss'
 
 
 const Articles = ({cart , setCart}) => {
@@ -23,15 +24,15 @@ const Articles = ({cart , setCart}) => {
     }
 
     return(
-        <div>
-            <main>
+        <div className="container-articles">
+        
                 <input 
                     type="text" 
                     placeholder="Search ..." 
                     onChange={event => 
                         {setSearchTerm(event.target.value)}}  
                     />
-                <div className='articles-container'>  
+                <div className="container-wrap">  
                         {articles.filter((article) => {
                         if (searchTerm === ""){
                             return article
@@ -39,23 +40,21 @@ const Articles = ({cart , setCart}) => {
                             return article; 
                         }
                         }).map((article) => (
-                        <div className="glass" key={article._id}>
+                        <div className="container-article" key={article._id}>
                             <div className="container-img-title">
                                 <figure>
                                 <Link className="link" to={`/articles/${article._id}`}>
-                                    <img className="img-small"src={article.image} alt={article.name} />
+                                    <img className="img-small" src={article.image} alt={article.name} />
                                 </Link>
                                 </figure>
-                                <h1>
-                                    {article.title}
-                                </h1>
+                                <h1>{article.title} </h1>
                                 <h2> {article.price} € </h2>
-                                <input type='submit' value='add' onClick={() =>addToCart(article)}/>
+                                <button onClick={() =>addToCart(article)}> ajouter au panier</button>
                             </div>
                         </div>
                         ))}
                 </div>
-            </main>
+
         </div>
     )
 }

@@ -20,7 +20,7 @@ const AnimalsList = () => {
     }, [])
 
     return(
-        <div className="container">
+        <div className="container-animals">
             <h1> Nos rescapés </h1>
             <div className="grids-animals">
                 {animals.map((animal) =>

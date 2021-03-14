@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'; 
 import { Link } from 'react-router-dom';
+import '../../styles/Article.scss'; 
 
 const Article = ({ match }) => {
     useEffect(() => {
@@ -17,14 +18,18 @@ const Article = ({ match }) => {
     }
 
     return(
+      
         <div className="main-single-article">
-                <img className="img-single-article" src={article.image} alt={article.title} />
+            <img src={article.image} alt={article.title} />
+            <div className="article-details">
                 <h1 className="h1-single-article"> {article.title} </h1>
-                <p className="p-description"> {article.description} </p>
-                <Link to={`/articles/`}>
-                    <button className='btn-return'> Retour </button>
-                </Link>
+                <h2> {article.price}€</h2>
+                <p> {article.description} </p>
+                <button> ajouter au panier </button>
+            </div>
+            
         </div>
+  
     )
 }
 
