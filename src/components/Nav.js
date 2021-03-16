@@ -1,13 +1,18 @@
-import React from 'react'; 
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import { useHistory } from "react-router-dom";
-import Badge from '@material-ui/core/Badge';
-import s from './../styles/nav.module.css'; 
 import logo from '../img/logo-noir.png'; 
-import cart from '../img/cart-black.svg'; 
+import Badge from '@material-ui/core/Badge';
+import { useHistory } from "react-router-dom";
+import { FiMenu, FiX } from 'react-icons/fi';
+import cart from '../img/cart-white.svg';
+
+import '../styles/Nav.scss'; 
+
 
 const Nav = ({token, numberOfCartItems}) => {
     let history = useHistory();
+
+    const [open, setOpen] = useState(false); 
 
     const LogoutHandler = async e => {
         e.preventDefault();
@@ -16,47 +21,69 @@ const Nav = ({token, numberOfCartItems}) => {
         window.location.reload();
     }
 
-    return (
-        <nav>
-            <Link style={{ textDecoration: 'none' }} to={`/`}>
-                <img className={s.logo} src={logo} alt="logo"/>
-            </Link>
+    
 
-            <Link style={{ textDecoration: 'none' }} to={`/produits`}>
-                <h1>Boutique</h1>
-            </Link>
-
-            <Link style={{ textDecoration: 'none' }} to={`/animals`}>
-                <h1> Animaux</h1>
+    return(
+        <nav className="navbar">
+             <Link to={`/`} style={{ textDecoration: 'none' }} className="nav-logo" onClick={() => setOpen(false)}>
+                <img className="logo" src={logo} alt="logo"/>
             </Link>
 
             <Link style={{ textDecoration: 'none' }} to={`/cart`}>
                 <Badge badgeContent={numberOfCartItems()} color="primary"
-                anchorOrigin={{
+                    anchorOrigin={{
                     vertical: 'bottom',
                     horizontal: 'right',
                 }}
-                >
-                    <img src={cart} className={s.cart}alt="icone-chariot" />
+            >
+                <img src={cart} className="cart"alt="icone-chariot" />
                 </Badge>
             </Link>
-            
-            <div className={`${token ? 'connected' : ''}`}>
-                <Link style={{ textDecoration: 'none' }} to={`/authentification`}>
-                    <h1> Connexion </h1>
-                </Link>
-            </div>
 
             <div className={`${token ? '' : 'not-connected'}`}>
-                <Link style={{ textDecoration: 'none' }} to={`/profile`}>
-                    <h1> Mon compte </h1>
-                </Link>
+                    <button className='logout-btn' onClick={LogoutHandler}> Déconnexion </button>
             </div>
-            {/* <div className={`${token ? '' : 'not-connected'}`}>
-                <button onClick={LogoutHandler}> Déconnexion </button>
-            </div> */}
-        </nav> 
+        
+            <div onClick={() => setOpen(!open)} className="nav-icon">
+                {open ? <FiX /> : <FiMenu />}
+            </div>
+
+        <ul className={open ? 'nav-links active' : 'nav-links'}>
+            <li className="nav-item">
+                <Link to={`/produits`} style={{ textDecoration: 'none' }} className="nav-logo" onClick={() => setOpen(false)}>
+                    <h1>Boutique</h1>
+                </Link>
+            </li>
+
+            <li className="nav-item">
+                <Link to={`/animals`} style={{ textDecoration: 'none' }} className="nav-logo" onClick={() => setOpen(false)}>
+                    <h1>Animaux</h1>
+                </Link>
+            </li>
+
+            <div className={`${token ? 'connected' : ''}`}> 
+                <li className="nav-item">
+            
+                        <Link to={"/authentification"} style={{ textDecoration: 'none' }} className="nav-logo" onClick={() => setOpen(false)}>
+                            <h1>Connexion</h1>
+                        </Link>
+                </li>
+            </div>
+
+            <div className={`${token ? '' : 'not-connected'}`}> 
+                <li className="nav-item">
+                    
+                        <Link to={"/profile"} style={{ textDecoration: 'none' }} className="nav-logo" onClick={() => setOpen(false)}>
+                            <h1>Mon compte</h1>
+                        </Link>
+                </li>
+            </div>
+
+
+
+        </ul>
+        </nav>
     )
 }
 
-export default Nav; 
+export default Nav;

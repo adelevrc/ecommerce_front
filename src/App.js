@@ -6,6 +6,7 @@ import './App.css';
 
 
 import Nav from './components/Nav'; 
+import Footer from './components/Footer'; 
 import LandingPage from './components/LandingPage'; 
 import Products from'./components/Products/ProductsList'; 
 import Article from './components/Products/Article'; 
@@ -116,6 +117,8 @@ function App() {
         </Switch>
 
       </Router>
+
+<Footer />
     </div>
   );
 }

@@ -5,46 +5,26 @@
   font-family: 'Lato', sans-serif;
 }
 
-
-
-
 body, html {
 background: linear-gradient(
   to left top,
   rgba(255, 255, 255, 0.8), 
   rgba(255, 255, 255, 0.5));
 }
-
-
-h1{
-  color:black;
-  font-weight: 500;
-  font-size: 1rem;
-  opacity: 0.8;
-  text-transform: uppercase;
-}
-
-h2{
-color:black;
-font-weight: 300;
-opacity: 0.8;
-padding: 1rem 5rem;
+body{
+  overflow-x:hidden ;
 }
 
 h3{
   color:#426696;
   font-weight: 600;
-  opacity: 0.8;
 }
-
-  
 
  .img-small{
     height: 20vh;
     width: 20vh;
     margin: 1rem;
 }
-
 
 main{
   display: flex;
@@ -72,7 +52,6 @@ main input {
 main ::placeholder{
   color: white;
 }
-
 
 button{
   border: none;

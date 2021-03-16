@@ -44,7 +44,7 @@ const Products = ({addToCart}) => {
                                 </Link>
                                 </figure>
                                 <h1>{product.title} </h1>
-                                <h2> {product.price} € </h2>
+                                <h4> {product.price} € </h4>
                                 <button onClick={() =>addToCart(product)}> ajouter au panier</button>
                             </div>
                         </div>
