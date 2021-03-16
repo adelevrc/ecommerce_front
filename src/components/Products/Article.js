@@ -4,34 +4,34 @@ import Counter from './Counter';
 
 import '../../styles/Article.scss'; 
 
-const Article = ({ match, addToCart}) => {
+const Article = ({ match}) => {
 
     useEffect(() => {
-        fetchArticle();
+        fetchProduct();
     }, [])
     
     
-    const [article, setArticle] = useState([]);
+    const [product, setProduct] = useState([]);
 
     const API_URL = process.env.REACT_APP_API_URL;
-
-    const fetchArticle = async () => {
-        const fetchArticle = await fetch(`${API_URL}/posts/${match.params._id}`);
-        const article = await fetchArticle.json();
-        setArticle(article);
+    console.log(API_URL); 
+    const fetchProduct = async () => {
+        const fetchArticle = await fetch(`${API_URL}/products/${match.params._id}`);
+        const product = await fetchArticle.json();
+        setProduct(product);
     }
 
     return(
       
         <div className="main-single-article">
-            <img src={article.image} alt={article.title} />
+            <img src={product.image} alt={product.title} />
             <div className="article-details">
-                <h1 className="h1-single-article"> {article.title} </h1>
-                <h2> {article.price}€</h2>
-                <p> {article.description} </p>
+                <h1 className="h1-single-article"> {product.title} </h1>
+                <h2> {product.price}€</h2>
+                <p> {product.description} </p>
 
                <Counter />
-               <button className="add-to-cart-btn" onClick={() =>addToCart()}> ajouter au panier</button>
+               {/* <button className="add-to-cart-btn" onClick={() =>addToCart()}> ajouter au panier</button> */}
             </div>
         </div>
   

@@ -22,7 +22,7 @@ const Nav = ({token, numberOfCartItems}) => {
                 <img className={s.logo} src={logo} alt="logo"/>
             </Link>
 
-            <Link style={{ textDecoration: 'none' }} to={`/articles`}>
+            <Link style={{ textDecoration: 'none' }} to={`/produits`}>
                 <h1>Boutique</h1>
             </Link>
 
@@ -52,9 +52,9 @@ const Nav = ({token, numberOfCartItems}) => {
                     <h1> Mon compte </h1>
                 </Link>
             </div>
-            <div className={`${token ? '' : 'not-connected'}`}>
+            {/* <div className={`${token ? '' : 'not-connected'}`}>
                 <button onClick={LogoutHandler}> Déconnexion </button>
-            </div>
+            </div> */}
         </nav> 
     )
 }

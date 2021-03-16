@@ -67,7 +67,7 @@ function App() {
               />
           </Route>
 
-          <Route path="/articles/:_id" exact  component={Article} addToCart={addToCart} /> 
+          <Route path="/products/:_id" exact  component={Article}/> 
 
           {/* <Route
             path='/articles/:_id"'
