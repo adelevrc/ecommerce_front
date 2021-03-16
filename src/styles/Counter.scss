@@ -1,0 +1,29 @@
+.container-count{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.button-counter-minus, .button-counter-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    width: 2rem;
+    height: 2rem;
+    color: black;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color:rgba(66, 102, 150,0.2);
+    border: 1px solid black;
+
+
+}
+.button-counter-minus{
+    margin-right:1rem;
+}
+
+.button-counter-add{
+    margin-left:1rem;
+}

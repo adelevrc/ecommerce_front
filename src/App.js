@@ -2,14 +2,12 @@ import React, {useState, useEffect } from 'react';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import ProtectedRoutes from './components/ProtectedRoutes/ProtectedRoutes'; 
 
-import Authentification from './components/Authentification/Authentification'; 
-
 import './App.css';
 
 
 import Nav from './components/Nav'; 
 import LandingPage from './components/LandingPage'; 
-import Articles from'./components/Products/Articles'; 
+import Products from'./components/Products/ProductsList'; 
 import Article from './components/Products/Article'; 
 import AddArticle from './components/Products/AddArticle'; 
 import CartList from './components/Cart/CartList';
@@ -20,25 +18,29 @@ import Animal from './components/Animals/Animal'
 import useToken from './components/useToken'; 
 import ProtectedRoutes from './components/ProtectedRoutes/ProtectedRoutes';
 import ProtectedRoutesRoles from './components/ProtectedRoutes/ProtectedRoutesRoles';
+import Authentification from './components/Authentification/Authentification'; 
+
 
 import Profile from './components/ProtectedRoutes/Profile'; 
-
-import NotFoundPage from './components/NotFoundPage/NotFoundPage'; 
-
 
 function App() {
 
   const { token, setToken } = useToken();
-  const localCart = JSON.parse(localStorage.getItem('articleCart')) || []; 
+  const localCart = JSON.parse(localStorage.getItem('productCart')) || []; 
   const [cart, setCart] = useState(localCart); 
 
   useEffect(() =>{
     numberOfCartItems() 
-}, [cart])
+  }, [cart])
 
   const numberOfCartItems = () =>{
     return cart.length;
 }
+
+  const addToCart = (product) => {
+    setCart([...cart, product]); 
+    localStorage.setItem('productCart', JSON.stringify(cart)); 
+  }
 
   return (
     
@@ -47,9 +49,6 @@ function App() {
 
         <Nav 
           token={token}
-          setToken={setToken}
-          cart={cart}
-          setCart={setCart}
           numberOfCartItems={numberOfCartItems}
         /> 
 
@@ -62,15 +61,26 @@ function App() {
             />
           </Route>
 
-          <Route path="/articles" exact>
-            <Articles 
-              cart={cart}
-              setCart = {setCart} 
-              numberOfCartItems={numberOfCartItems}
+          <Route path="/produits" exact>
+            <Products 
+              addToCart={addToCart}
               />
           </Route>
 
-          <Route path="/articles/:_id" exact  component={Article} /> 
+          <Route path="/articles/:_id" exact  component={Article} addToCart={addToCart} /> 
+
+          {/* <Route
+            path='/articles/:_id"'
+            render={(props) => (
+              <Article {...props} addToCart={addToCart}  />
+            )}
+         /> */}
+
+          {/* <Route path="/articles/:_id" exact>
+            <Article
+            cart={cart} setCart={setCart}
+              />x
+          </Route> */}
 
           <Route path="/cart" exact >
             <CartList 
@@ -102,7 +112,6 @@ function App() {
             />
           </Route>
 
-          <Route component={NotFoundPage} />
 
         </Switch>
 

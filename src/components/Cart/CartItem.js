@@ -1,6 +1,6 @@
 import React from 'react'; 
 
-const CartItem = ({cart, setCart,  item,  price, title, image, name}) => {
+const CartItem = ({cart, setCart,  item,  price, title, image}) => {
 
     const deleteHandler = () => {
       let selectedCartItems = cart.filter((el) => el._id !== item._id);
@@ -11,7 +11,7 @@ const CartItem = ({cart, setCart,  item,  price, title, image, name}) => {
     return(
         <div>
             <div className="div-cart">
-                <img src={image} alt={name}/>
+                <img src={image} alt={title}/>
                 <div className="div-cart-title-price">
                     <h2> {title} </h2>
                     <h3> {price} € </h3>

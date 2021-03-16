@@ -6,7 +6,7 @@ const formReducer = (state, event) => {
       ...state,
       [event.name]: event.value
     }
-   }
+  }
 
 function AddArticle() {
 
@@ -35,7 +35,6 @@ function AddArticle() {
       name: event.target.name, 
       value: event.target.value,
     })
-    console.log(event.target.name); 
   }
 
   return(
@@ -57,13 +56,20 @@ function AddArticle() {
           </label>
         </fieldset>
 
+         <fieldset>
+          <label>
+          <p className="input-label-add-article"> Prix </p>
+            <input id="price" name="price" placeholder="Ecrivez votre article ici" onChange={handleChange} step="1"/>
+            </label>
+        </fieldset>
+
         <fieldset>
          <label>
          <p className="input-label-add-article">Image</p>
-           <input id="image" name="image" placeholder="Entrez le lien de la photo" onChange={handleChange} step="1"/>
+           <input id="image" type="text" name="image" placeholder="Entrez le lien de la photo" onChange={handleChange} step="1"/>
          </label>
         </fieldset> 
-        <button type="submit">Ajouter</button>
+        <button>Ajouter</button>
         </div>   
       </form>
     </div>

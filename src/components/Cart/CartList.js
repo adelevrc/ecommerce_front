@@ -1,10 +1,7 @@
 import React, {useState, useEffect} from 'react'; 
 import CartItem from './CartItem'; 
 import { v4 as uuidv4 } from "uuid";
-// import Popup from '../Popup/PopupConnexion';
-import s from '../../styles/popupconnexion.module.css'
-
-// import PopUp from '../Popup/PopupConnexion'; 
+import '../../styles/Popup.scss'
 
 
 const CartList = ({ cart, setCart}) => {
@@ -14,6 +11,8 @@ const CartList = ({ cart, setCart}) => {
     }); 
 
     const [cartTotal, setCartTotal] = useState(0); 
+
+    
     const [orders, setOrders] = useState(0); 
     const [seen, setSeen] = useState(false); 
    
@@ -57,19 +56,25 @@ const CartList = ({ cart, setCart}) => {
                     item = {item}
                     title = {item.title}
                     image = {item.image}
-                    name = {item.name}
                     price = {item.price}
                     cart={cart}
                     setCart={setCart}
                 />
                 )}
+
+                    <button onClick={()=>addCheckout()}> Commander </button>
+                
+{/* 
                 <div className="div-price">
                   <p> Total : {cartTotal} </p>
-                </div>
-
-                <button href={s.popup1} onClick = {() => addCheckout()}> </button>
+                </div> */}
 
         </div>
+
+        
+
+
+
     )
 
 }

@@ -4,24 +4,20 @@ import axios from 'axios';
 import '../../styles/Articles.scss'
 
 
-const Articles = ({cart , setCart}) => {
+const Products = ({addToCart}) => {
 
-    const [articles, setArticles] = useState([]);
+    const [products, setProducts] = useState([]);
     const [searchTerm, setSearchTerm] = useState(''); 
     let API_URL = process.env.REACT_APP_API_URL; 
 
     useEffect(() =>{
         axios.get(`${API_URL}/posts`)
         .then(data => {
-            setArticles(data.data); 
+            setProducts(data.data); 
         })
         .catch (err => console.log(err)); 
     }, [])
 
-    const addToCart = (article) => {
-            setCart([...cart, article]); 
-            localStorage.setItem('articleCart', JSON.stringify(cart)); 
-    }
 
     return(
         <div className="container-articles">
@@ -33,23 +29,23 @@ const Articles = ({cart , setCart}) => {
                         {setSearchTerm(event.target.value)}}  
                     />
                 <div className="container-wrap">  
-                        {articles.filter((article) => {
+                        {products.filter((article) => {
                         if (searchTerm === ""){
                             return article
                         } else if (article.title.toLowerCase().includes(searchTerm.toLowerCase())) {
                             return article; 
                         }
-                        }).map((article) => (
-                        <div className="container-article" key={article._id}>
+                        }).map((product) => (
+                        <div className="container-article" key={product._id}>
                             <div className="container-img-title">
                                 <figure>
-                                <Link className="link" to={`/articles/${article._id}`}>
-                                    <img className="img-small" src={article.image} alt={article.name} />
+                                <Link className="link" to={`/articles/${product._id}`}>
+                                    <img className="img-small" src={product.image} alt={product.name} />
                                 </Link>
                                 </figure>
-                                <h1>{article.title} </h1>
-                                <h2> {article.price} € </h2>
-                                <button onClick={() =>addToCart(article)}> ajouter au panier</button>
+                                <h1>{product.title} </h1>
+                                <h2> {product.price} € </h2>
+                                <button onClick={() =>addToCart(product)}> ajouter au panier</button>
                             </div>
                         </div>
                         ))}
@@ -61,4 +57,4 @@ const Articles = ({cart , setCart}) => {
 
 
 
-export default Articles; 
+export default Products; 

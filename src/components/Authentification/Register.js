@@ -16,9 +16,6 @@ const Register = () => {
         .then((res) => {
             console.log(res); 
         })
-
-        console.log(userEmailReg); 
-        console.log(userPasswordReg); 
     }
 
     return(
