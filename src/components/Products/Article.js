@@ -29,8 +29,7 @@ const Article = ({ match}) => {
                 <h1 className="h1-single-article"> {product.title} </h1>
                 <h2> {product.price}€</h2>
                 <p> {product.description} </p>
-
-               <Counter />
+                
                {/* <button className="add-to-cart-btn" onClick={() =>addToCart()}> ajouter au panier</button> */}
             </div>
         </div>

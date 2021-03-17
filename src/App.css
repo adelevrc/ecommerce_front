@@ -128,62 +128,8 @@ button:hover {
     width: 100%;
   }
 
-  .div-cart{
-    display: flex;
-    flex-direction: row;
-      margin: 1rem;
-  }
 
-  .div-cart-title-price{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-evenly;    
-    margin:1rem;
-  }
 
-  .div-cart img {
-    height: 10rem;
-    width: 15rem;
-  }
-
-  .div-cart-title-price button {
-    width: 10rem;
-    /* padding: 0.5rem; */
-    padding: 0;
-    margin: 0.2rem;
-  }
-
-  .div-cart-title-price h2{
-    text-align: left;
-    padding: 0;
-  }
-
-  .container-cart h1 {
-    text-align: center;
-    font-size: 1.5rem;
-    margin: 1rem;
-  }
-
-  .cart-btn{
-    display: flex;
-  }
-  .div-price{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #B2F1D0;
-    height: 4rem;
-    margin: 4rem 0;
-    flex-grow: 1;
-  }
-
-  .div-price p {
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    
-  }
 
   .connected {
     display: none;

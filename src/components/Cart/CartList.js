@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import '../../styles/Popup.scss'
 
 
-const CartList = ({ cart, setCart}) => {
+const CartList = ({ cart, setCart, count, setCount, decrement, increment}) => {
 
     useEffect(() => {
         total()
@@ -59,6 +59,10 @@ const CartList = ({ cart, setCart}) => {
                     price = {item.price}
                     cart={cart}
                     setCart={setCart}
+                    setCount={setCount}
+                    count={count}
+                    decrement={decrement}
+                    increment={increment}
                 />
                 )}
 

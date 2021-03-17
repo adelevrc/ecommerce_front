@@ -12,6 +12,9 @@ import Products from'./components/Products/ProductsList';
 import Article from './components/Products/Article'; 
 import AddArticle from './components/Products/AddArticle'; 
 import CartList from './components/Cart/CartList';
+import Counter from './components/Products/Counter'; 
+
+import Contact from './components/Contact'; 
 
 import Animals from './components/Animals/AnimalsList'; 
 import Animal from './components/Animals/Animal'
@@ -29,6 +32,7 @@ function App() {
   const { token, setToken } = useToken();
   const localCart = JSON.parse(localStorage.getItem('productCart')) || []; 
   const [cart, setCart] = useState(localCart); 
+  const [count, setCount] = useState(0);
 
   useEffect(() =>{
     numberOfCartItems() 
@@ -36,12 +40,20 @@ function App() {
 
   const numberOfCartItems = () =>{
     return cart.length;
-}
+  }
 
   const addToCart = (product) => {
     setCart([...cart, product]); 
     localStorage.setItem('productCart', JSON.stringify(cart)); 
   }
+
+  const increment = (item) => {
+    setCount(count + 1); 
+  }
+
+  const decrement = (item) => {
+      setCount(count - 1); 
+    }
 
   return (
     
@@ -68,7 +80,14 @@ function App() {
               />
           </Route>
 
+      
+
           <Route path="/products/:_id" exact  component={Article}/> 
+
+          <Route path="/contact" exact>
+            <Contact
+              />
+          </Route>
 
           {/* <Route
             path='/articles/:_id"'
@@ -87,6 +106,10 @@ function App() {
             <CartList 
             cart={cart}
             setCart={setCart}
+            count={count}
+            setCount={setCount}
+            increment={increment}
+            decrement={decrement}
             />
           </Route>
 
@@ -112,6 +135,11 @@ function App() {
               setToken={setToken}
             />
           </Route>
+          
+          <Counter
+            count={count}
+            setCount={setCount} 
+          />
 
 
         </Switch>
