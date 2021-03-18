@@ -1,9 +1,13 @@
 import emailjs  from 'emailjs-com';
+import { useHistory } from "react-router-dom";
 import '../styles/Contact.scss'; 
 
 const Contact = () => {
 
-function sendEmail(e) {
+  const history = useHistory();
+  
+  
+  function sendEmail(e) {
     e.preventDefault();
 
     emailjs
@@ -16,9 +20,11 @@ function sendEmail(e) {
       .then(
         (result) => {
           console.log(result.text);
+          history.push("/");
         },
         (error) => {
           console.log(error.text);
+          alert("NOT LIL")
         }
       );
   }
