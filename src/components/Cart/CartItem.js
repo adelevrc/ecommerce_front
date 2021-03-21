@@ -27,7 +27,7 @@ const CartItem = ({cart, setCart,  item,  price, title, image, count, setCount, 
 
                     <div className="cart-btn-container"> 
                         <button className="btn-cart" > Voir le produit </button>
-                        <button className="btn-cart" onClick={deleteHandler}> Retirer </button>
+                        <button className="btn-cart btn-delete" onClick={deleteHandler}> Retirer </button>
                     </div>   
                 </div>
           

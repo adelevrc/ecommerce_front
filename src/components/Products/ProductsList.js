@@ -36,8 +36,7 @@ const Products = ({addToCart}) => {
                             return product; 
                         }
                         }).map((product) => (
-                        <div className="container-article" key={product._id}>
-                            <div className="container-img-title">
+                            <div className="container-img-title" key={product._id}>
                                 <figure>
                                 <Link className="link" to={`/products/${product._id}`}>
                                     <img className="wrapper-img" src={product.image} alt={product.name} />
@@ -47,7 +46,6 @@ const Products = ({addToCart}) => {
                                 <h4> {product.price} € </h4>
                                 <button onClick={() =>addToCart(product)}> ajouter au panier</button>
                             </div>
-                        </div>
                         ))}
                 </div>
 

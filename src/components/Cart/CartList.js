@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import CartItem from './CartItem'; 
 import { v4 as uuidv4 } from "uuid";
 import axios from 'axios'; 
+import '../../styles/Cart.scss'
 import '../../styles/Popup.scss'; 
 
 
@@ -38,7 +39,7 @@ const CartList = ({ cart, setCart, count, setCount, decrement, increment}) => {
         ))
         setProductId(productId); 
         console.log(productId); 
-        console.log(localStorageToken.userId); 
+        // console.log(localStorageToken.userId); 
     }
 
     const addCheckout = () => {
@@ -54,6 +55,7 @@ const CartList = ({ cart, setCart, count, setCount, decrement, increment}) => {
     return(
         <div className="container-cart">
             <h1> Mon panier </h1>
+            <div className="div-cart-wrapper">
             {cart.map((item) =>
                 <CartItem
                     key = {uuidv4()}
@@ -69,13 +71,15 @@ const CartList = ({ cart, setCart, count, setCount, decrement, increment}) => {
                     increment={increment}
                 />
                 )}
+            </div>
 
-        <button onClick={()=>addCheckout()}> Commander </button>
+            <div className="div-price">
+                <p> Total : {cartTotal}  €</p>
+            </div>
+
+        <button className="btn-order" onClick={()=>addCheckout()}> Commander </button>
                 
 
-                <div className="div-price">
-                  <p> Total : {cartTotal} </p>
-                </div>
 
         </div>
 
