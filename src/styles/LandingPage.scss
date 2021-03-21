@@ -1,25 +1,33 @@
 
 .landing-page-container{
-    p{
+    margin: 0 1rem;
+
+    h2{
+        padding: 0 1rem;
+        font-size: 1.2rem;
+        text-transform: uppercase;        
+        font-weight: 600;
+        color: #172A3A;
+    }
+    .paragraph-landing-page{
+        width: 40vh;
+        font-size: 0.9rem;
         padding: 1rem;  
     }
-    h2{
-    padding: 1rem;
-    font-weight: 400;
-    }
-
 }
 .title{
    
-    padding: 1.5rem 1rem;
+    padding: 2rem 1rem 1rem 1rem;
 
     h1{
+        color: #172A3A;
         font-size:2rem; 
         text-transform: uppercase;
         // margin: 1rem 0.2rem;
-        font-weight: 400;
+        font-weight: 700;
 
     }
+   
 
 }
 .icone{
@@ -54,8 +62,28 @@
 
 
     .paragraph-description-white-centered{
-        text-align: left;
+        text-align: center;
         font-size: 0.8rem;
+        font-weight: 300;
         margin: 1rem 0;
     }
   }
+
+  @media screen and (min-width: 1200px) {
+    .landing-page-container{
+        margin: 0 5rem ;
+    }
+    .grid-items-actions{
+        display: flex;
+        .h3-blue-bold{
+            font-size: 1.5rem;
+        }
+
+    .paragraph-description-white-centered{
+        font-size: 0.9rem;
+        text-align: center;
+        }
+      }
+
+
+}

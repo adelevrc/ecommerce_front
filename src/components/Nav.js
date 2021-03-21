@@ -25,7 +25,7 @@ const Nav = ({token, numberOfCartItems}) => {
 
     return(
         <nav className="navbar">
-             <Link to={`/`} style={{ textDecoration: 'none' }} className="nav-logo" onClick={() => setOpen(false)}>
+             <Link to={`/`} className="nav-logo" onClick={() => setOpen(false)}>
                 <img className="logo" src={logo} alt="logo"/>
             </Link>
 
@@ -50,13 +50,13 @@ const Nav = ({token, numberOfCartItems}) => {
 
         <ul className={open ? 'nav-links active' : 'nav-links'}>
             <li className="nav-item">
-                <Link to={`/produits`} style={{ textDecoration: 'none' }} className="nav-logo" onClick={() => setOpen(false)}>
+                <Link to={`/produits`} className="nav-logo" onClick={() => setOpen(false)}>
                     <h1>Boutique</h1>
                 </Link>
             </li>
 
             <li className="nav-item">
-                <Link to={`/animals`} style={{ textDecoration: 'none' }} className="nav-logo" onClick={() => setOpen(false)}>
+                <Link to={`/animals`} className="nav-logo" onClick={() => setOpen(false)}>
                     <h1>Animaux</h1>
                 </Link>
             </li>
@@ -64,8 +64,8 @@ const Nav = ({token, numberOfCartItems}) => {
             <div className={`${token ? 'connected' : ''}`}> 
                 <li className="nav-item">
             
-                        <Link to={"/authentification"} style={{ textDecoration: 'none' }} className="nav-logo" onClick={() => setOpen(false)}>
-                            <h1>Connexion</h1>
+                        <Link to={"/authentification"} className="nav-logo" onClick={() => setOpen(false)}>
+                            <h1 className="nav-connexion">Connexion</h1>
                         </Link>
                 </li>
             </div>
@@ -73,11 +73,17 @@ const Nav = ({token, numberOfCartItems}) => {
             <div className={`${token ? '' : 'not-connected'}`}> 
                 <li className="nav-item">
                     
-                        <Link to={"/profile"} style={{ textDecoration: 'none' }} className="nav-logo" onClick={() => setOpen(false)}>
+                        <Link to={"/profile"} className="nav-logo" onClick={() => setOpen(false)}>
                             <h1>Mon compte</h1>
                         </Link>
                 </li>
             </div>
+
+            <li className="nav-item">
+                <Link to={`/contact`} className="nav-logo" onClick={() => setOpen(false)}>
+                    <h1>Nous contacter</h1>
+                </Link>
+            </li>
 
 
 

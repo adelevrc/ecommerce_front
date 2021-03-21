@@ -28,13 +28,14 @@ const Register = () => {
                     onChange={(e)=> {
                         setUserEmailReg(e.target.value)
                     }}
-                    />
+                    placeholder="entrez votre email"/>
 
                 <label> <p> Mot de passe </p> </label>
                 <input type="password" 
                     onChange={(e)=> {
                         setUserPasswordReg(e.target.value)
                     }}
+                placeholder="entrez votre mot de passe"
                 />
                 <div>
                 <button className="register-btn"> M'enregistrer </button>

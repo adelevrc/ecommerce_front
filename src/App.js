@@ -12,6 +12,7 @@ import Products from'./components/Products/ProductsList';
 import Article from './components/Products/Article'; 
 import AddArticle from './components/Products/AddArticle'; 
 import CartList from './components/Cart/CartList';
+import Order from './components/Cart/Order'; 
 import Counter from './components/Products/Counter'; 
 
 import Contact from './components/Contact'; 
@@ -80,21 +81,21 @@ function App() {
               />
           </Route>
 
-      
+          {/* <Route path="/products/:_id" exact  component={Article}/>  */}
 
-          <Route path="/products/:_id" exact  component={Article}/> 
+          <Route path="/contact" exact component={Contact}/>
+          
 
-          <Route path="/contact" exact>
-            <Contact
+          <Route path="/orders" exact>
+            <Order
               />
           </Route>
-
-          {/* <Route
+          <Route
             path='/articles/:_id"'
             render={(props) => (
               <Article {...props} addToCart={addToCart}  />
             )}
-         /> */}
+         />
 
           {/* <Route path="/articles/:_id" exact>
             <Article
@@ -128,7 +129,6 @@ function App() {
               token={token} />
 
 
-
           <Route path="/authentification" exact>
             <Authentification
               token={token}
@@ -144,9 +144,11 @@ function App() {
 
         </Switch>
 
+        <Footer />
+
       </Router>
 
-<Footer />
+
     </div>
   );
 }

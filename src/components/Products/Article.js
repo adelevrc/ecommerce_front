@@ -4,12 +4,11 @@ import Counter from './Counter';
 
 import '../../styles/Article.scss'; 
 
-const Article = ({ match}) => {
+const Article = ({ match},{addToCart}) => {
 
     useEffect(() => {
         fetchProduct();
     }, [])
-    
     
     const [product, setProduct] = useState([]);
 
@@ -20,9 +19,8 @@ const Article = ({ match}) => {
         const product = await fetchArticle.json();
         setProduct(product);
     }
-
+    
     return(
-      
         <div className="main-single-article">
             <img src={product.image} alt={product.title} />
             <div className="article-details">
@@ -30,10 +28,10 @@ const Article = ({ match}) => {
                 <h2> {product.price}€</h2>
                 <p> {product.description} </p>
                 
-               {/* <button className="add-to-cart-btn" onClick={() =>addToCart()}> ajouter au panier</button> */}
+               <button className="add-to-cart-btn" onClick={() =>addToCart()}> ajouter au panier</button>
+
             </div>
         </div>
-  
     )
 }
 

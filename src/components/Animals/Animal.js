@@ -10,7 +10,6 @@ const Animal = ({ match }) => {
     const [animal, setAnimal] = useState([]);
 
     const API_URL = process.env.REACT_APP_API_URL;
-    console.log(API_URL); 
 
     const fetchAnimal = async () => {
         const fetchAnimal = await fetch(`${API_URL}/animals/${match.params._id}`);

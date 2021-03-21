@@ -4,6 +4,7 @@ import promotion from '../img/promotion.svg';
 import planetearth from '../img/planet-earth.svg'; 
 import lifesaver from '../img/life-saver.svg'; 
 import '../styles/LandingPage.scss'; 
+import Contact from './Contact'
 
 // import SupportUs from './SupportUs'
 // import AliceCarousel from './Carrousel'; 
@@ -66,6 +67,7 @@ const LandingPage = () => {
 
         
                 {/* <SupportUs /> */}
+                <Contact />
         
         </div>
     )

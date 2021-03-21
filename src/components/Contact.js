@@ -32,15 +32,15 @@ const Contact = () => {
   return(
 
       <div className='container-form'>
-        <h1> Une question ? Contactez-nous !</h1>
+        <h1> Nous contacter </h1>
          <form id="contact-form" onSubmit={sendEmail}>
             <input className='contact-input' type="hidden" name="contact_number"/>
-            <label>Vote nom</label>
-            <input className='contact-input' type="text" name="name"/>
-            <label>Votre email</label>
-            <input className='contact-input' type="email" name="email"/>
-            <label>Ecrivez votre message</label>
-            <textarea className='contact-textarea' name="message"></textarea>
+            <label>Nom Prénom</label>
+            <input className='contact-input' type="text" name="name" placeholder="Votre Nom Prénom"/>
+            <label>Adresse email</label>
+            <input className='contact-input' type="email" name="email" placeholder="Votre adresse email"/>
+            <label>Message</label>
+            <textarea className='contact-textarea' name="message" placeholder="Votre message"></textarea>
             <input className="input-submit"type="submit" value="Envoyer"/>
         </form>
       </div>

@@ -1,7 +1,7 @@
 .navbar{
   height: 80px;
   width: 100%;
-  background-color: black;
+  background-color: #172A3A;
   color:white;
   display: flex;
   justify-content: space-between;
@@ -21,13 +21,21 @@
 }
 h1{
   font-size: 1rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
 }
-
+.nav-connexion{
+  color:#28F7D2;
+}
 .nav-links{
   display: grid;
   grid-template-columns: repeat(5,auto);
   grid-gap: 20px; 
   list-style: none;
+}
+.nav-logo{
+  text-decoration: none;
 }
 
 .nav-link {
@@ -47,6 +55,7 @@ h1{
 }
 .nav-item{
 text-decoration: none;
+color: white;
 }
 .logout-btn{
   border-radius: 10px;
@@ -80,7 +89,7 @@ text-decoration: none;
   }
 
   .nav-links.active {
-    background: rgb(66, 102, 150); 
+    background: #172A3A; 
     left: 0;
   }
 

@@ -4,9 +4,6 @@ import '../../styles/Counter.scss'
 
 const Counter = ( {count, decrement, item, increment}) => {
 
-
-
-console.log(item); 
     return(
         
             <div className="container-count">
