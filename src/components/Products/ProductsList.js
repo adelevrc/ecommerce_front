@@ -20,10 +20,18 @@ const Products = ({addToCart}) => {
             setProducts(data.data); 
         })
         .catch (err => console.log(err)); 
-    }, [])
+    }, [products, API_URL])
 
     const deleteItem = (product) => {
-        axios.delete(`${API_URL}/products/${product._id}`)
+        axios.delete(`${API_URL}/products/${product._id}`,
+        {
+            headers:{'Authorization': 'Bearer ' + userToken.token}
+        })
+        refreshProductsPage(); 
+    }
+
+    const refreshProductsPage = () => {
+        setProducts(products => [...products]);
     }
  
     return(
@@ -60,7 +68,5 @@ const Products = ({addToCart}) => {
         </div>
     )
 }
-
-
 
 export default Products; 

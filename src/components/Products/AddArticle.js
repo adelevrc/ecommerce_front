@@ -12,6 +12,9 @@ const formReducer = (state, event) => {
 
 function AddArticle() {
 
+  const tokenString = localStorage.getItem('token');
+  const userToken = JSON.parse(tokenString);
+  
   const [formData, setFormData] = useReducer(formReducer, {});
   const [submitting, setSubmitting] = useState(false);
   const history = useHistory();
@@ -26,7 +29,9 @@ function AddArticle() {
     
     let API_URL = process.env.REACT_APP_API_URL;
 
-    axios.post(`${API_URL}/products`, formData)
+    axios.post(`${API_URL}/products`, formData, {
+      headers:{'Authorization': 'Bearer ' + userToken.token}
+    })
     .then(res => {
       history.push("/produits");
     })
