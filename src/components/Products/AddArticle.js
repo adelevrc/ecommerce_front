@@ -27,11 +27,13 @@ function AddArticle() {
       setSubmitting(false);
     }, 3000)
     
-    let API_URL = process.env.REACT_APP_API_URL;
+    const API_URL = process.env.REACT_APP_API_URL;
 
-    axios.post(`${API_URL}/products`, formData, {
-      headers:{'Authorization': 'Bearer ' + userToken.token}
-    })
+    axios.post(`${API_URL}/products`, formData, 
+      {
+        headers:{'Authorization': 'Bearer ' + userToken.token}
+      }
+    )
     .then(res => {
       history.push("/produits");
     })

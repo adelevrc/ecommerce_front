@@ -10,6 +10,9 @@ const AnimalsList = () => {
 
     let API_URL = process.env.REACT_APP_API_URL; 
     const [animals, setAnimals] = useState([]);
+    const tokenString = localStorage.getItem('token');
+    const userToken = JSON.parse(tokenString);
+    const userRole = userToken.userRole;
 
     useEffect(() =>{
         axios.get(`${API_URL}/animals`)
@@ -17,7 +20,21 @@ const AnimalsList = () => {
             setAnimals(data.data); 
         })
         .catch (err => console.log(err)); 
-    }, [])
+    }, [API_URL]);
+
+    console.log(animals); 
+
+    const deleteAnimal = (animal) => {
+        axios.delete(`${API_URL}/animals/${animal._id}`,
+        {
+            headers:{'Authorization': 'Bearer ' + userToken.token}
+        })
+        refreshProductsPage(); 
+    }
+
+    const refreshProductsPage = () => {
+        setAnimals(animals => [...animals]);
+    }
 
     return(
         <div className="container-animals">
@@ -31,14 +48,16 @@ const AnimalsList = () => {
                             </Link>
                         </figure>
                         <h2>{animal.name} </h2>
-                        <Link to={`/animals/${animal._id}`}>
-                            <button> Voir </button>
-                        </Link>
+                        <div className="div-btn"> 
+                            <Link to={`/animals/${animal._id}`}>
+                                <button> Voir </button>
+                            </Link>
+                            <button className={`btn-delete ${userRole==="admin" ? '' : 'not-auth-component'}`}onClick={() =>deleteAnimal(animal)}> Supprimer </button>
+                        </div>
                     </div>
                 )}
             </div>
         </div>
-
     )
 }
 

@@ -20,6 +20,7 @@ import Contact from './components/Contact';
 
 import Animals from './components/Animals/AnimalsList'; 
 import Animal from './components/Animals/Animal'
+import UpdateAnimal from './components/Animals/UpdateAnimal'; 
 
 import useToken from './components/useToken'; 
 import ProtectedRoutes from './components/ProtectedRoutes/ProtectedRoutes';
@@ -127,6 +128,9 @@ function App() {
           </Route>
 
           <Route path="/animals/:_id" exact component={Animal} /> 
+          <Route path="/modification/admin/animals/:id" 
+          component={UpdateAnimal} /> 
+
 
           <ProtectedRoutes path="/profile" exact 
               component={Profile} 

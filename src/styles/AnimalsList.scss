@@ -48,14 +48,21 @@
       padding: 0;
     }
 
-    button{
-      background-color: #4e6f9b;
-      font-size: 0.6em;
-      text-transform: uppercase;
-      min-width: 7rem;
-      margin: 1rem;
-      border-radius: 10px;
-    }
+    .div-btn{
+      display: flex;
+      flex-direction: row;
+      button{
+        background-color: #4e6f9b;
+        font-size: 0.6em;
+        text-transform: uppercase;
+        min-width: 7rem;
+        margin: 1rem;
+        border-radius: 10px;
+      }
+      .btn-delete{
+        background-color: red;
+      }
+  }
 }
  
   

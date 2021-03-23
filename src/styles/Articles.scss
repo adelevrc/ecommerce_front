@@ -63,11 +63,17 @@
         padding: 0;
         margin-left: 0.7em;
     }
-    button{
-        width: 80%;
-        border-radius: 10px;
-    }
-
+    .div-btn{
+        display: flex;
+        flex-direction: row;
+        button{
+            min-width: 7rem;
+            border-radius: 10px;
+        }
+        }
+        .btn-delete{
+          background-color: red;
+        }
   }
   
 

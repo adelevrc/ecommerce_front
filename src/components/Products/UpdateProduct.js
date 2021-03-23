@@ -5,7 +5,6 @@ import axios from 'axios';
 
 export default class UpdateProduct extends React.Component {
 
-    
 
     state = {
       item: {
@@ -35,11 +34,17 @@ export default class UpdateProduct extends React.Component {
         )
       }
 
-      handleSubmit = event => {
-        let API_URL = process.env.REACT_APP_API_URL;
+      handleSubmit = async () => {
+        const tokenString = localStorage.getItem('token');
+        const userToken = await JSON.parse(tokenString);
+        const API_URL = process.env.REACT_APP_API_URL;
         let data = this.state.item
 
-        axios.patch(`${API_URL}/products/${this.props.match.params.id}`, data)
+        axios.patch(`${API_URL}/products/${this.props.match.params.id}`, data, 
+        {
+            headers:{'Authorization': 'Bearer ' + userToken.token}
+        })
+
         .then(res => {
           console.log(res); 
           console.log("DONE");
