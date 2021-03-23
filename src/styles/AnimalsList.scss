@@ -50,17 +50,20 @@
 
     .div-btn{
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       button{
         background-color: #4e6f9b;
         font-size: 0.6em;
         text-transform: uppercase;
         min-width: 7rem;
-        margin: 1rem;
+        margin: 0.2rem;
         border-radius: 10px;
       }
       .btn-delete{
         background-color: red;
+      }
+      .btn-update{
+        background-color: rgb(255, 166, 0);
       }
   }
 }
@@ -130,6 +133,12 @@
         h2{
           font-size: 1em;
         }
+        .div-btn{
+          flex-direction: row;
+          button{
+            margin: 1rem 0.2rem;
+          }
+      }
     }
 }
 

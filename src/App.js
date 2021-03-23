@@ -128,8 +128,8 @@ function App() {
           </Route>
 
           <Route path="/animals/:_id" exact component={Animal} /> 
-          <Route path="/modification/admin/animals/:id" 
-          component={UpdateAnimal} /> 
+
+          <Route path="/modification/admin/animals/:id" component={UpdateAnimal} /> 
 
 
           <ProtectedRoutes path="/profile" exact 

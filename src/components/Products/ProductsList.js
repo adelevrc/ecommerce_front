@@ -59,8 +59,12 @@ const Products = ({addToCart}) => {
                                 </figure>
                                 <h1>{product.title} </h1>
                                 <h4> {product.price} € </h4>
+                                
                                 <div className="div-btn"> 
                                     <button onClick={() =>addToCart(product)}> ajouter au panier</button>
+                                    <Link to={`/modification/admin/produits/${product._id}`}>
+                                        <button className={`btn-update ${userRole==="admin" ? '' : 'not-auth-component'}`}> Modifier </button>
+                                    </Link>
                                     <button className={`btn-delete ${userRole==="admin" ? '' : 'not-auth-component'}`}onClick={() =>deleteItem(product)}> Supprimer </button>
                                 </div>
                             </div>

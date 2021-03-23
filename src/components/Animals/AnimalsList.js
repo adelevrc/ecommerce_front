@@ -52,6 +52,9 @@ const AnimalsList = () => {
                             <Link to={`/animals/${animal._id}`}>
                                 <button> Voir </button>
                             </Link>
+                            <Link to={`/modification/admin/animals/${animal._id}`}>
+                                <button className={`btn-update ${userRole==="admin" ? '' : 'not-auth-component'}`}> Modifier </button>
+                            </Link>
                             <button className={`btn-delete ${userRole==="admin" ? '' : 'not-auth-component'}`}onClick={() =>deleteAnimal(animal)}> Supprimer </button>
                         </div>
                     </div>

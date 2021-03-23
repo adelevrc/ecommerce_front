@@ -65,19 +65,21 @@
     }
     .div-btn{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         button{
             min-width: 7rem;
             border-radius: 10px;
+            margin: 0.2rem;
         }
         }
         .btn-delete{
           background-color: red;
         }
+        .btn-update{
+            background-color: rgb(255, 166, 0);
+          }
   }
   
-
-
 
 @media screen and (min-width: 700px) {
     .container-img-title{
@@ -114,6 +116,5 @@
             font-size: 0.7em;
             border-radius: 10px;
         }
-
     }
 }
