@@ -1,5 +1,6 @@
 import React from 'react'; 
 import axios from 'axios';
+import '../../styles/Updateform.scss'; 
 
 
 
@@ -59,7 +60,8 @@ export default class UpdateProduct extends React.Component {
       render() {
           return(
           
-            <form onSubmit={this.handleSubmit}>
+            <form className="form" onSubmit={this.handleSubmit}>
+              <h1> Page Administrateur : modifier un produit</h1>
                 <fieldset>
                 <label>
                     <p>Nom du produit</p>
@@ -85,19 +87,12 @@ export default class UpdateProduct extends React.Component {
                 <fieldset> 
                 <label>
                 <p>Prix</p>
-                <textarea id="price" name="price" value={this.state.item.price} onChange={this.handleChange} step="1"/>
-                </label>
-                </fieldset>
-                
-                <fieldset>
-                <label>
-                    <p>Est ce que ce produit est en stock ?  </p>
-                    <input id="checkbox-is-dead" type="checkbox" name="isDead" value={this.state.item.name} onChange={this.handleChange} />
+                <input id="price" name="price" value={this.state.item.price} onChange={this.handleChange} step="1"/>
                 </label>
                 </fieldset>
 
                 <div>
-                <button onClick={this.handleSubmit} type="submit">Ajouter l'animal</button>
+                <button onClick={this.handleSubmit} type="submit">Modifier</button>
                 </div>      
         </form>
 

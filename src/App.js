@@ -86,7 +86,7 @@ function App() {
           <Route path="/modification/admin/produits/:id"  component={UpdateProduct} /> 
 
 
-          {/* <Route path="/products/:_id" exact  component={Article}/>  */}
+          <Route path="/products/:_id" exact  component={Article}/> 
 
           <Route path="/contact" exact component={Contact}/>
           
@@ -95,18 +95,6 @@ function App() {
             <Order
               />
           </Route>
-          <Route
-            path='/articles/:_id"'
-            render={(props) => (
-              <Article {...props} addToCart={addToCart}  />
-            )}
-         />
-
-          {/* <Route path="/articles/:_id" exact>
-            <Article
-            cart={cart} setCart={setCart}
-              />x
-          </Route> */}
 
           <Route path="/cart" exact >
             <CartList 
@@ -126,8 +114,9 @@ function App() {
           <Route path="/animals" exact>
             <Animals />
           </Route>
+         
 
-          <Route path="/animals/:_id" exact component={Animal} /> 
+          <Route path="/animals/:_id"  exact component={Animal} /> 
 
           <Route path="/modification/admin/animals/:id" component={UpdateAnimal} /> 
 
@@ -155,8 +144,6 @@ function App() {
         <Footer />
 
       </Router>
-
-
     </div>
   );
 }

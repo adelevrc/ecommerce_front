@@ -1,5 +1,6 @@
 import React from 'react'; 
 import axios from 'axios';
+import '../../styles/Updateform.scss'; 
 
 
 
@@ -54,7 +55,8 @@ export default class UpdateAnimal extends React.Component {
       render() {
           return(
           
-            <form onSubmit={this.handleSubmit}>
+            <form className="form" onSubmit={this.handleSubmit}>
+              <h1> Page Administrateur : modifier un animal</h1>
                 <fieldset>
                     <label>
                         <p>Nom de l'animal</p>
@@ -71,7 +73,7 @@ export default class UpdateAnimal extends React.Component {
 
                 <fieldset> 
                     <label>
-                        <p>Soins à apporter / remarque</p>
+                        <p>Soins à apporter / remarques </p>
                         <textarea id="image" name="care" value={this.state.item.care} onChange={this.handleChange} step="1"/>
                     </label>
                 </fieldset>
@@ -84,7 +86,7 @@ export default class UpdateAnimal extends React.Component {
                 </fieldset>
 
                 <div>
-                    <button onClick={this.handleSubmit} type="submit">Ajouter l'animal</button>
+                    <button onClick={this.handleSubmit} type="submit">Modifier</button>
                 </div>      
         </form>
 
