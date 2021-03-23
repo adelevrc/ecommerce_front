@@ -74,7 +74,7 @@ const Nav = ({token, numberOfCartItems}) => {
                 <li className="nav-item">
                     
                         <Link to={"/profile"} className="nav-logo" onClick={() => setOpen(false)}>
-                            <h1>Mon compte</h1>
+                            <h1 className="nav-connexion">Mon compte</h1>
                         </Link>
                 </li>
             </div>

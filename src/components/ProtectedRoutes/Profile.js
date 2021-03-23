@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'; 
 import {withRouter} from 'react-router-dom'; 
 import { Link } from 'react-router-dom';
-import s from '../../styles/connexion.module.css'; 
+import '../../styles/Profile.scss'; 
 
 
 const Profile = () => {
@@ -32,17 +32,31 @@ const Profile = () => {
         }
 
     return (
-        <div className={s.myaccount}>
+        <div className="myaccount">
+
             <h1> Mon compte </h1>
-            <h2> Email : {user.email} </h2>
 
-            <div className={`${isAdmin ? '' : 'not-auth-component'}`}>
-                <h1> Oh hello </h1>
+            <div className="info">
+                <h2> Mes informations : </h2>
+                <h3> Email : {user.email} </h3>
+                <h3> Nom Prénom : {user.name}</h3>
+                <h4> Numéro de téléphone : {user.phoneNumber}</h4>
+            </div>
 
-                <Link style={{ textDecoration: 'none' }} to={`/create`}>
-                    <h1> Ajouter un produit </h1>
-                </Link>
-                
+            <div className="info">
+                <h2> Mes commandes : </h2>
+            </div>
+
+            <div className={`info ${isAdmin ? '' : 'not-auth-component'}`}>
+                <h2> Vous êtes sur la partie Administrateur, vous pouvez : </h2>
+
+                <div className="div-row-admin">
+                    <Link style={{ textDecoration: 'none' }} to={`/create`}>
+                        <h3 className="add-link"> Ajouter un produit </h3>
+                    </Link>
+
+                        <h3 className="add-link"> Voir les commandes </h3>
+                </div>
             </div>
         </div>
     )

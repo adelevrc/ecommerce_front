@@ -12,7 +12,6 @@ const ProtectedRoutesRoles = ({ token , component : Component, ...rest}) => {
         if (userToken.userRole === 'admin') {
             return <Component/> 
         }else{
-            console.log(token.userRole); 
             return <Redirect to={{pathname: '/', state: {from: props.location}}} />
         }
     }}/>

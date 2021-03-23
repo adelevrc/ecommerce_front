@@ -1,5 +1,7 @@
 import React, { useReducer, useState } from 'react';
 import axios from 'axios'; 
+import { useHistory } from "react-router-dom";
+
 
 const formReducer = (state, event) => {
     return {
@@ -12,7 +14,7 @@ function AddArticle() {
 
   const [formData, setFormData] = useReducer(formReducer, {});
   const [submitting, setSubmitting] = useState(false);
-
+  const history = useHistory();
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -26,7 +28,7 @@ function AddArticle() {
 
     axios.post(`${API_URL}/products`, formData)
     .then(res => {
-    console.log(`form data : ${formData}`);
+      history.push("/produits");
     })
   }
 
@@ -39,34 +41,34 @@ function AddArticle() {
 
   return(
     <div className="container-add-article">
-      <h1> Ajouter un article </h1>
+      <h1> Ajouter un produit </h1>
       <form className="form-add-articles" onSubmit={handleSubmit}>
       <div className="container-form-article">
         <fieldset>
           <label>
-            <p className="input-label-add-article"> Titre de l'article </p>
-            <input id="title" type="text" name="title" placeholder="Entrez le titre de l'article" onChange={handleChange} step="1"/>
+            <p className="input-label-add-article"> Nom du produit </p>
+            <input id="title" type="text" name="title" placeholder="Nom du produit" onChange={handleChange} step="1"/>
           </label>
         </fieldset>
 
         <fieldset>
          <label>
          <p className="input-label-add-article"> Description </p>
-           <textarea id="description" name="description" placeholder="Ecrivez votre article ici" onChange={handleChange} step="1"/>
+           <textarea id="description" name="description" placeholder="Description du produit" onChange={handleChange} step="1"/>
           </label>
         </fieldset>
 
          <fieldset>
           <label>
           <p className="input-label-add-article"> Prix </p>
-            <input id="price" name="price" placeholder="Ecrivez votre article ici" onChange={handleChange} step="1"/>
+            <input id="price" name="price" placeholder="Prix du produit" onChange={handleChange} step="1"/>
             </label>
         </fieldset>
 
         <fieldset>
          <label>
          <p className="input-label-add-article">Image</p>
-           <input id="image" type="text" name="image" placeholder="Entrez le lien de la photo" onChange={handleChange} step="1"/>
+           <input id="image" type="text" name="image" placeholder="lien de l'image" onChange={handleChange} step="1"/>
          </label>
         </fieldset> 
         <button>Ajouter</button>

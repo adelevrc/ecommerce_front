@@ -10,6 +10,10 @@ const Products = ({addToCart}) => {
     const [searchTerm, setSearchTerm] = useState(''); 
     const API_URL = process.env.REACT_APP_API_URL; 
 
+    const tokenString = localStorage.getItem('token');
+    const userToken = JSON.parse(tokenString);
+    const userRole = userToken.userRole;
+
     useEffect(() =>{
         axios.get(`${API_URL}/products`)
         .then(data => {
@@ -18,7 +22,10 @@ const Products = ({addToCart}) => {
         .catch (err => console.log(err)); 
     }, [])
 
-
+    const deleteItem = (product) => {
+        axios.delete(`${API_URL}/products/${product._id}`)
+    }
+ 
     return(
         <div className="container-articles">
         
@@ -45,6 +52,7 @@ const Products = ({addToCart}) => {
                                 <h1>{product.title} </h1>
                                 <h4> {product.price} € </h4>
                                 <button onClick={() =>addToCart(product)}> ajouter au panier</button>
+                                <button className={`${userRole==="admin" ? '' : 'not-auth-component'}`}onClick={() =>deleteItem(product)}> Supprimer </button>
                             </div>
                         ))}
                 </div>

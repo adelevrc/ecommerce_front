@@ -1,0 +1,56 @@
+.myaccount{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    align-items: center; 
+    h1{
+        padding: 0 1rem;
+        font-size: 1.2rem;     
+        font-weight: 600;
+        color: #172A3A;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin: 1rem 0;   
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        h2,h3,h4{
+            padding: 0 1rem;
+            font-size: 1rem;     
+            font-weight: 300;
+            line-height: 2rem;
+        }
+        h2{
+            text-transform: uppercase;
+            color: #172A3A;
+            font-size: 1.3rem;     
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+        h3,h4{
+            color: rgb(126, 120, 120);
+        }
+
+        .div-row-admin{
+            display: flex;
+            .add-link{
+                background-color: #28F7D2;
+                margin: 1rem;
+                border-radius: 10px;
+            }
+            .add-link:hover{
+                text-decoration: underline;
+            }
+        }
+      
+    }
+  }
+
+  @media only screen and (min-width:700px) {
+    .myaccount{
+        height: 70vh;
+    }
+  } 
