@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import LandingPage from './components/LandingPage'; 
 import Products from'./components/Products/ProductsList'; 
 import Article from './components/Products/Article'; 
+import UpdateProduct from './components/Products/UpdateProduct'; 
 import AddArticle from './components/Products/AddArticle'; 
 import CartList from './components/Cart/CartList';
 import Order from './components/Cart/Order'; 
@@ -80,6 +81,9 @@ function App() {
               addToCart={addToCart}
               />
           </Route>
+
+          <Route path="/modification/admin/produits/:id"  component={UpdateProduct} /> 
+
 
           {/* <Route path="/products/:_id" exact  component={Article}/>  */}
 
