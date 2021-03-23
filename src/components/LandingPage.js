@@ -4,7 +4,8 @@ import promotion from '../img/promotion.svg';
 import planetearth from '../img/planet-earth.svg'; 
 import lifesaver from '../img/life-saver.svg'; 
 import '../styles/LandingPage.scss'; 
-import Contact from './Contact'
+import Contact from './Contact'; 
+import AliceCarousel from './Animals/Slider'; 
 
 // import SupportUs from './SupportUs'
 // import AliceCarousel from './Carrousel'; 
@@ -61,9 +62,9 @@ const LandingPage = () => {
 
             </div>
 
-            {/* <div className="div-carousel-component">
+            <div className="div-carousel-component">
                 <AliceCarousel />
-            </div> */}
+            </div>
 
         
                 {/* <SupportUs /> */}

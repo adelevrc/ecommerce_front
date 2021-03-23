@@ -146,3 +146,17 @@ button:hover {
   .no-display-popup{
     display: none;
   }
+
+  .alice-carousel ul li img{
+    height: 25vh;
+    width: 95%;
+    object-fit: cover;
+  }
+  @media screen and (min-width: 700px) {
+  .alice-carousel ul li img{
+    height: 30vh;
+    width: 50vh;
+    margin: 1rem;
+    object-fit: cover;
+  }
+}
