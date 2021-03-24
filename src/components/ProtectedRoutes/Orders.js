@@ -27,14 +27,13 @@ const Orders = () => {
         }, 
             [API_URL, userToken.token])
 
-            console.log(orders);
 
-            // console.log(orders);
-            // console.log("coucou");
-            orders.forEach(element => console.log(element.products));
-            // orders.forEach(element => setProductsOrdered(element.products));
-            // console.log('beuh');
-            // console.log(products); 
+            orders.forEach(element => {
+                console.log(element.products);
+                //infinite loop ... 
+                // setProductsOrdered(element.products)
+            });
+
 
     return (
         <div>
