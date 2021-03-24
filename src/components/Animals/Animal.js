@@ -12,11 +12,11 @@ const Animal = ({ match }) => {
     const API_URL = process.env.REACT_APP_API_URL;
 
     const fetchAnimal = async () => {
+
         const fetchAnimal = await fetch(`${API_URL}/animals/${match.params._id}`);
         const animal = await fetchAnimal.json();
         setAnimal(animal);
         console.log(animal);
-        
     }
     return (
         <div className="container-animal">

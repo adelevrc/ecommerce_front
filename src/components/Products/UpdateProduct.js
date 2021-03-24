@@ -3,9 +3,7 @@ import axios from 'axios';
 import '../../styles/Updateform.scss'; 
 
 
-
 export default class UpdateProduct extends React.Component {
-
 
     state = {
       item: {
@@ -18,44 +16,44 @@ export default class UpdateProduct extends React.Component {
     }
 
     componentDidMount = () => {
-        let API_URL = process.env.REACT_APP_API_URL;
-        axios.get(`${API_URL}/products/${this.props.match.params.id}`)
-          .then(res => {
-            this.setState({item: res.data}); 
-          })
-          .catch(err => console.log(err))
-      }
-
-      handleChange = e => {
-        e.persist();
-        this.setState(product => ({
-          item: { ...product.item,  
-            [e.target.name]: e.target.value,  }, 
-        })
-        )
-      }
-
-      handleSubmit = async () => {
-        const tokenString = localStorage.getItem('token');
-        const userToken = await JSON.parse(tokenString);
-        const API_URL = process.env.REACT_APP_API_URL;
-        let data = this.state.item
-
-        axios.patch(`${API_URL}/products/${this.props.match.params.id}`, data, 
-        {
-            headers:{'Authorization': 'Bearer ' + userToken.token}
-        })
-
+      const API_URL = process.env.REACT_APP_API_URL;
+      const { match: { params } } = this.props;
+      axios.get(`${API_URL}/products/${params.id}`)
         .then(res => {
-          console.log(res); 
-          console.log("DONE");
-          this.props.history.push('/produits');
+          this.setState({item: res.data}); 
         })
-        .then(this.props.history.push('/produits'))
-        .then(alert("Produit modifié avec succés "))
-        .catch(err => console.log(err));
-      }
+        .catch(err => console.log(err))
+    }
 
+    handleChange = e => {
+      e.persist();
+      this.setState(product => ({
+        item: { ...product.item,  
+          [e.target.name]: e.target.value,  }, 
+      })
+     )
+    }
+
+    handleSubmit = async () => {
+      const tokenString = localStorage.getItem('token');
+      const userToken = await JSON.parse(tokenString);
+      const API_URL = process.env.REACT_APP_API_URL;
+      let data = this.state.item
+
+      axios.patch(`${API_URL}/products/${this.props.match.params.id}`, data, 
+      {
+        headers:{'Authorization': 'Bearer ' + userToken.token}
+      }
+    )
+      .then(res => {
+        console.log(res); 
+        console.log("DONE");
+        this.props.history.push('/produits');
+      })
+      .then(this.props.history.push('/produits'))
+      .then(alert("Produit modifié avec succés "))
+      .catch(err => console.log(err));
+    }
 
       render() {
           return(

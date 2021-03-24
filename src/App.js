@@ -68,8 +68,6 @@ function App() {
           numberOfCartItems={numberOfCartItems}
         /> 
 
-        {/* <LandingPage/> */}
-
         <Switch>
 
           <Route path="/" exact>
