@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {withRouter} from 'react-router-dom'; 
 import { Link } from 'react-router-dom';
 import '../../styles/Profile.scss'; 
+import Orders from './Orders'; 
 
 
 const Profile = () => {
@@ -45,6 +46,7 @@ const Profile = () => {
 
             <div className="info">
                 <h2> Mes commandes : </h2>
+                <Orders />
             </div>
 
             <div className={`info ${isAdmin ? '' : 'not-auth-component'}`}>
