@@ -7,12 +7,13 @@ import '../../styles/Articles.scss'
 const Products = ({addToCart}) => {
 
     const [products, setProducts] = useState([]);
+    const [isAdmin, setisAdmin] = useState(false); 
     const [searchTerm, setSearchTerm] = useState(''); 
     const API_URL = process.env.REACT_APP_API_URL; 
 
-    const tokenString = localStorage.getItem('token');
-    const userToken = JSON.parse(tokenString);
-    const userRole = userToken.userRole;
+    // const tokenString = localStorage.getItem('token');
+    // const userToken = JSON.parse(tokenString);
+    // const userRole = userToken.userRole;
 
     useEffect(() =>{
         axios.get(`${API_URL}/products`)
@@ -22,7 +23,24 @@ const Products = ({addToCart}) => {
         .catch (err => console.log(err)); 
     }, [products, API_URL])
 
+    useEffect(() =>{
+        if(localStorage.getItem('token') != null)
+        checkIsAdmin(); 
+    }, []);
+
+    const checkIsAdmin = () => {
+        const tokenString = localStorage.getItem('token');
+        const userToken = JSON.parse(tokenString);
+        if(userToken === null){setisAdmin(false)}
+        if(userToken.userRole === null){setisAdmin(false)}
+        if(userToken.userRole === 'admin'){setisAdmin(true)}
+    }
+
+
     const deleteItem = (product) => {
+        const tokenString = localStorage.getItem('token');
+        const userToken = JSON.parse(tokenString);
+        
         axios.delete(`${API_URL}/products/${product._id}`,
         {
             headers:{'Authorization': 'Bearer ' + userToken.token}
@@ -63,9 +81,9 @@ const Products = ({addToCart}) => {
                                 <div className="div-btn"> 
                                     <button onClick={() =>addToCart(product)}> ajouter au panier</button>
                                     <Link to={`/modification/admin/produits/${product._id}`}>
-                                        <button className={`btn-update ${userRole==="admin" ? '' : 'not-auth-component'}`}> Modifier </button>
+                                        <button className={`btn-update ${isAdmin ? '' : 'not-auth-component'}`}> Modifier </button>
                                     </Link>
-                                    <button className={`btn-delete ${userRole==="admin" ? '' : 'not-auth-component'}`}onClick={() =>deleteItem(product)}> Supprimer </button>
+                                    <button className={`btn-delete ${isAdmin ? '' : 'not-auth-component'}`}onClick={() =>deleteItem(product)}> Supprimer </button>
                                 </div>
                             </div>
                         ))}
