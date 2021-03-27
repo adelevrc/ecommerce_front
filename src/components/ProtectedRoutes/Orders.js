@@ -7,42 +7,57 @@ import '../../styles/Profile.scss'
 const Orders = () => {
 
     const [orders, setOrders] = useState([]);
-    const [productsOrdered, setProductsOrdered]=useState([])
+    const [datas, setDatas]=useState([])
+
 
     const stringifyToken = localStorage.getItem('token');
     const userToken = JSON.parse(stringifyToken);
 
     const API_URL = process.env.REACT_APP_API_URL;
 
-        useEffect(() => {
-            axios.get(`${API_URL}/orders/user`,
-                {
-                    headers:{'Authorization': 'Bearer ' + userToken.token}
-                } 
-            )
-                .then(data => {
-                    setOrders(data.data)
-                })
-                .catch (err => console.log(err));
-        }, 
-            [API_URL, userToken.token])
+    useEffect(() => {
+        axios.get(`${API_URL}/orders/user`,
+    {
+        headers:{'Authorization': 'Bearer ' + userToken.token}
+    } 
+    )
+    .then(data => {
+        setOrders(data.data)
+    })
+    .catch (err => console.log(err));
+}, [API_URL, userToken.token])
 
 
-            orders.forEach(element => {
-                console.log(element.products);
-                //infinite loop ... 
-                // setProductsOrdered(element.products)
-            });
+    const productsOrdered = orders.map((product) => {
+        return product.products
+    }
+    )
 
+    console.log(productsOrdered); 
+
+  
+    for (let i = 0; i < productsOrdered.length; i++){
+        const dataElement = productsOrdered[i];
+        // infinite loop 
+        // setDatas(productsOrdered[i]); 
+        console.log('coucou');
+        console.log(productsOrdered[i]);
+        console.log("salut");
+        console.log(dataElement);
+
+        for (let j = 0;j < dataElement.length; j++){
+            console.log(dataElement[i])
+        }
+    }
 
     return (
         <div>
-            {orders.map((product) =>
-                    <div className="div-order" key={uuidv4()}>
-                        <h1> {product.products}</h1>
-                    </div>
-            )
-            }
+            {/* {datas.map((product) =>
+                    <ul>
+                        <li key={uuidv4()}> {product.products}</li>
+                    </ul>
+                )
+            } */}
         </div>
     )
 }

@@ -12,6 +12,7 @@ const AnimalsList = () => {
     const [animals, setAnimals] = useState([]);
     const [isAdmin, setisAdmin] = useState(false); 
   
+    console.log(animals);
 
     useEffect(() =>{
         axios.get(`${API_URL}/animals`)
@@ -53,6 +54,8 @@ const AnimalsList = () => {
         <div className="container-animals">
             <h1> Nos rescapés </h1>
             <div className="grids-animals">
+
+
                 {animals.map((animal) =>
                     <div className="container-one-animal" key={uuidv4()}>
                         <figure>
@@ -65,6 +68,7 @@ const AnimalsList = () => {
                             <Link to={`/animals/${animal._id}`}>
                                 <button> Voir </button>
                             </Link>
+
                             <Link to={`/modification/admin/animals/${animal._id}`}>
                                 <button className={`btn-update ${isAdmin ? '' : 'not-auth-component'}`}> Modifier </button>
                             </Link>

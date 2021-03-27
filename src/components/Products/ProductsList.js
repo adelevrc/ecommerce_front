@@ -11,10 +11,6 @@ const Products = ({addToCart}) => {
     const [searchTerm, setSearchTerm] = useState(''); 
     const API_URL = process.env.REACT_APP_API_URL; 
 
-    // const tokenString = localStorage.getItem('token');
-    // const userToken = JSON.parse(tokenString);
-    // const userRole = userToken.userRole;
-
     useEffect(() =>{
         axios.get(`${API_URL}/products`)
         .then(data => {

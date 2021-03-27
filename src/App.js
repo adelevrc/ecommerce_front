@@ -13,7 +13,6 @@ import Article from './components/Products/Article';
 import UpdateProduct from './components/Products/UpdateProduct'; 
 import AddArticle from './components/Products/AddArticle'; 
 import CartList from './components/Cart/CartList';
-import Order from './components/Cart/Order'; 
 import Counter from './components/Products/Counter'; 
 
 import Contact from './components/Contact'; 
@@ -34,7 +33,7 @@ function App() {
 
   const { token, setToken } = useToken();
   const localCart = JSON.parse(localStorage.getItem('productCart')) || []; 
-  const [cart, setCart] = useState(localCart); 
+  const [cart, setCart] = useState(localCart);  
   const [count, setCount] = useState(0);
 
   useEffect(() =>{
@@ -87,12 +86,7 @@ function App() {
           <Route path="/products/:_id" exact  component={Article}/> 
 
           <Route path="/contact" exact component={Contact}/>
-          
 
-          <Route path="/orders" exact>
-            <Order
-              />
-          </Route>
 
           <Route path="/cart" exact >
             <CartList 

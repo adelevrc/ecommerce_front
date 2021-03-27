@@ -56,7 +56,6 @@ const Profile = () => {
                     <Link style={{ textDecoration: 'none' }} to={`/create`}>
                         <h3 className="add-link"> Ajouter un produit </h3>
                     </Link>
-
                         <h3 className="add-link"> Voir les commandes </h3>
                 </div>
             </div>
