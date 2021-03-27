@@ -22,33 +22,37 @@ const Orders = () => {
     } 
     )
     .then(data => {
-        setOrders(data.data)
+        let orders_from_backend = data.data;
+        setOrders(orders_from_backend);
+        const productsOrdered = orders_from_backend.map((order) => {
+                return order.products
+            }
+        )
+        console.log(productsOrdered);
+        let dataElements = [];
+        for (let i = 0; i < productsOrdered.length; i++){
+            const dataElement = productsOrdered[i];
+            console.log('coucou');
+            console.log(productsOrdered[i]);
+            console.log("salut");
+            console.log(dataElement);
+
+            for (let j = 0;j < dataElement.length; j++){
+                dataElements.push(dataElement[i])
+                console.log(dataElement[i])
+            }
+        }
+        setDatas(dataElements);
+        console.log("YOUPI");
+        console.log(dataElements);
+        console.log(datas);
+
     })
     .catch (err => console.log(err));
 }, [API_URL, userToken.token])
 
 
-    const productsOrdered = orders.map((product) => {
-        return product.products
-    }
-    )
 
-    console.log(productsOrdered); 
-
-  
-    for (let i = 0; i < productsOrdered.length; i++){
-        const dataElement = productsOrdered[i];
-        // infinite loop 
-        // setDatas(productsOrdered[i]); 
-        console.log('coucou');
-        console.log(productsOrdered[i]);
-        console.log("salut");
-        console.log(dataElement);
-
-        for (let j = 0;j < dataElement.length; j++){
-            console.log(dataElement[i])
-        }
-    }
 
     return (
         <div>
