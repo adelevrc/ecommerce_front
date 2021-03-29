@@ -32,7 +32,14 @@ const Contact = () => {
   return(
 
       <div className='container-form'>
+        
         <h1> Nous contacter </h1>
+        <div className="p-contact">
+        <p>Une question sur notre association ? Vous voulez devenir bénévole ou travailler pour nous ? Vous voulez connaître nos prochaines actions ?
+          Vous pouvez nous contacter par mail via le formulaire ci-dessous. Nous vous répondons dans les 3 jours. 
+        </p>
+        <p> A bientôt ! </p>
+        </div>
          <form id="contact-form" onSubmit={sendEmail}>
             <input className='contact-input' type="hidden" name="contact_number"/>
             <label>Nom Prénom</label>

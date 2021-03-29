@@ -8,6 +8,7 @@
         height: 50vh;
         width: 40vh;
         margin: 0.5em;
+        object-fit: cover;
     }
 }
 
@@ -23,6 +24,7 @@
     h1{
         font-size: 1rem;
         letter-spacing: 0.1em;
+        text-transform: uppercase;
     }
     
     h2{
@@ -46,6 +48,21 @@
     }
 }
 
+.div-orders{
+    display: flex;
+    .img-orders{
+        width: 20vh;
+        margin: 1rem;
+    }
+    .details-orders{
+        display: flex;
+        flex-direction: column; 
+        .bold-h4{
+            font-weight: 900;
+        }
+    }
+}
+
 @media screen and (min-width: 700px) {
     .main-single-article{
         flex-direction: row;
@@ -55,7 +72,7 @@
         img{
             height: 70vh;
             width: 55vh;
-            margin: 0.5em 0 0 10em;
+            margin-bottom: 5rem;
         }
     }
 

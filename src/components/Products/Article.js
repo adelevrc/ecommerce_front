@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'; 
-import { Link } from 'react-router-dom';
-import Counter from './Counter'; 
+
 
 import '../../styles/Article.scss'; 
 
-const Article = ({ match},{addToCart}) => {
+const Article = ({ match }) => {
 
     useEffect(() => {
         fetchProduct();
@@ -19,6 +18,7 @@ const Article = ({ match},{addToCart}) => {
         const product = await fetchArticle.json();
         setProduct(product);
     }
+    console.log(product.title);
     
     return(
         <div className="main-single-article">
@@ -28,8 +28,6 @@ const Article = ({ match},{addToCart}) => {
                 <h2> {product.price}€</h2>
                 <p> {product.description} </p>
                 
-               <button className="add-to-cart-btn" onClick={() =>addToCart()}> ajouter au panier</button>
-
             </div>
         </div>
     )

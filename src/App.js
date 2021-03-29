@@ -18,7 +18,8 @@ import Counter from './components/Products/Counter';
 import Contact from './components/Contact'; 
 
 import Animals from './components/Animals/AnimalsList'; 
-import Animal from './components/Animals/Animal'
+import Animal from './components/Animals/Animal'; 
+import AddAnimal from './components/Animals/AddAnimals'; 
 import UpdateAnimal from './components/Animals/UpdateAnimal'; 
 
 import useToken from './components/useToken'; 
@@ -82,11 +83,9 @@ function App() {
 
           <Route path="/modification/admin/produits/:id"  component={UpdateProduct} /> 
 
-
           <Route path="/products/:_id" exact  component={Article}/> 
 
           <Route path="/contact" exact component={Contact}/>
-
 
           <Route path="/cart" exact >
             <CartList 
@@ -99,7 +98,7 @@ function App() {
             />
           </Route>
 
-          <ProtectedRoutesRoles path="/create" exact 
+          <ProtectedRoutesRoles path="/create/produits" exact 
             component={AddArticle} 
             token={token}/>
 
@@ -111,6 +110,10 @@ function App() {
           <Route path="/animals/:_id"  exact component={Animal} /> 
 
           <Route path="/modification/admin/animals/:id" component={UpdateAnimal} /> 
+          
+          <ProtectedRoutesRoles path="/create/animals" exact 
+            component={AddAnimal} 
+            token={token}/>
 
 
           <ProtectedRoutes path="/profile" exact 

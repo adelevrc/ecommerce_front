@@ -71,14 +71,14 @@ export default class UpdateProduct extends React.Component {
                 <fieldset>
                 <label>
                 <p>Description</p>
-                <input id="description" name="description" value={this.state.item.description} onChange={this.handleChange} step="1"/>
+                <textarea id="description" name="description" value={this.state.item.description} onChange={this.handleChange} step="1"/>
                 </label>
                 </fieldset>
 
                 <fieldset> 
                 <label>
                 <p>Photo</p>
-                <textarea id="image" name="image" value={this.state.item.image} onChange={this.handleChange} step="1"/>
+                <input id="image" name="image" value={this.state.item.image} onChange={this.handleChange} step="1"/>
                 </label>
                 </fieldset>
 

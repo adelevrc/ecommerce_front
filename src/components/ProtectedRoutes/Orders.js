@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from "uuid";
 import axios from 'axios'; 
-import '../../styles/Profile.scss'
+import '../../styles/Article.scss'
 
 
 const Orders = () => {
@@ -15,6 +15,7 @@ const Orders = () => {
 
     const API_URL = process.env.REACT_APP_API_URL;
 
+
     useEffect(() => {
         axios.get(`${API_URL}/orders/user`,
     {
@@ -22,13 +23,14 @@ const Orders = () => {
     } 
     )
     .then(data => {
-        let orders_from_backend = data.data;
-        setOrders(orders_from_backend);
-        const productsOrdered = orders_from_backend.map((order) => {
+        let ordersFromBackend = data.data;
+
+        const productsOrdered = ordersFromBackend.map((order) => {
                 return order.products
             }
         )
-        console.log(productsOrdered);
+        setOrders(productsOrdered);
+
         let dataElements = [];
         for (let i = 0; i < productsOrdered.length; i++){
             const dataElement = productsOrdered[i];
@@ -36,32 +38,31 @@ const Orders = () => {
             console.log(productsOrdered[i]);
             console.log("salut");
             console.log(dataElement);
+            setDatas(dataElement); 
 
             for (let j = 0;j < dataElement.length; j++){
                 dataElements.push(dataElement[i])
                 console.log(dataElement[i])
             }
         }
-        setDatas(dataElements);
-        console.log("YOUPI");
-        console.log(dataElements);
-        console.log(datas);
-
     })
     .catch (err => console.log(err));
 }, [API_URL, userToken.token])
 
-
-
-
     return (
         <div>
-            {/* {datas.map((product) =>
-                    <ul>
-                        <li key={uuidv4()}> {product.products}</li>
-                    </ul>
+            {datas.map((product) =>
+            <div className="div-orders" key={uuidv4()}>
+                    <figure>
+                    <img className="img-orders" src={product.image} alt={product.title}/>
+                    </figure>
+                    <div className="details-orders">
+                        <h3>{product.title}</h3>
+                        <h4 className="bold-h4">{product.price} €</h4>
+                    </div>
+            </div>
                 )
-            } */}
+            }
         </div>
     )
 }

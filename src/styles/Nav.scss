@@ -8,6 +8,17 @@
   align-items: center;
   padding : 0 2rem; 
   font-size: 1.2rem;
+
+  h1{
+    font-size: 1rem;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .nav-connexion{
+    color:#28F7D2;
+  }
 }
 
 .logo{
@@ -19,15 +30,8 @@
   height: 2rem;
   color:white;
 }
-h1{
-  font-size: 1rem;
-  color: white;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.nav-connexion{
-  color:#28F7D2;
-}
+
+
 .nav-links{
   display: grid;
   grid-template-columns: repeat(5,auto);

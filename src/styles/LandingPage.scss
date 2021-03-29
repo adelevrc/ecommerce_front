@@ -13,6 +13,7 @@
         width: 40vh;
         font-size: 0.9rem;
         padding: 1rem;  
+        font-weight: 300;
     }
 }
 .title{
@@ -68,8 +69,14 @@
   }
 
   @media screen and (min-width: 1200px) {
+
+    
     .landing-page-container{
         margin: 0 5rem ;
+        .paragraph-landing-page{
+            width: 70vh;
+            font-size: 1rem;
+        }
     }
     .grid-items-actions{
         display: flex;
@@ -80,6 +87,9 @@
     .paragraph-description-white-centered{
         font-size: 0.9rem;
         text-align: center;
+        }
+        .div-action{
+            max-width: 20vw;
         }
       }
 

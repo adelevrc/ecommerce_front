@@ -8,7 +8,7 @@ import Orders from './Orders';
 const Profile = () => {
 
     const [user, setUser] = useState([]); 
-    const [isAdmin, setIsAdmin] = useState(false); 
+    const [isAdmin, setIsAdmin] = useState(true); 
 
     const localStorageToken = JSON.parse(localStorage.getItem('token'));
     const userId = localStorageToken.userId
@@ -49,14 +49,17 @@ const Profile = () => {
                 <Orders />
             </div>
 
-            <div className={`info ${isAdmin ? '' : 'not-auth-component'}`}>
+            <div className={`${isAdmin ? 'info' : 'not-auth-component'}`}>
                 <h2> Vous êtes sur la partie Administrateur, vous pouvez : </h2>
 
                 <div className="div-row-admin">
-                    <Link style={{ textDecoration: 'none' }} to={`/create`}>
+                    <Link style={{ textDecoration: 'none' }} to={`/create/produits`}>
                         <h3 className="add-link"> Ajouter un produit </h3>
                     </Link>
-                        <h3 className="add-link"> Voir les commandes </h3>
+                    <Link style={{ textDecoration: 'none' }} to={`/create/animals`}>
+                        <h3 className="add-link"> Ajouter un animal </h3>
+                    </Link>
+                        
                 </div>
             </div>
         </div>

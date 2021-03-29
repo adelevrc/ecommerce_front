@@ -15,7 +15,7 @@ const LandingPage = () => {
         <div className='landing-page-container'>
             <div className="title">
                 <h1>
-                    association 
+                    BluePeace 
                 </h1>
             </div>
 
@@ -24,7 +24,8 @@ const LandingPage = () => {
                 </h2>
 
                 <p className="paragraph-description-white paragraph-landing-page">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                    Association loi 1901 pour la préservation et la réhabilitation des animaux marins. 
+                    Nous accueillons les animaux en captivité dans notre refuge et faisons tout notre possible pour les remettre à la vie sauvage. 
                 </p>
            
             <div className="grid-items-actions">
@@ -32,7 +33,7 @@ const LandingPage = () => {
                     <img src={planetearth} className="icone" alt="icone de planete"/>
                     <h3 className="h3-blue-bold" > Préservation </h3>
                     <p className="paragraph-description-white-centered">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.                    
+                        Notre objectif est de préserver la faune et la flore marine et que l'impact de l'homme soit le plus minime possible.              
                     </p>
                 </div>
 
@@ -40,7 +41,7 @@ const LandingPage = () => {
                     <img src={lifesaver} className="icone" alt="icone de bouée de sauvetage"/>
                     <h3 className="h3-blue-bold"> Réhabilitation </h3>
                     <p className="paragraph-description-white-centered">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.                    
+                        Tous les jours, notre refuge aide les animaux marins en captivité à retourner à la vie sauvage.                     
                     </p>
                 </div>
 
@@ -48,7 +49,7 @@ const LandingPage = () => {
                     <img src={promotion} className="icone" alt="icone d'un megaphone"/>
                     <h3 className="h3-blue-bold"> Militantisme </h3>
                     <p className="paragraph-description-white-centered">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.                    
+                        Signataires de nombreuses chartes pour la préservation de l'environnement, nous faisons aussi entendre nos voix lors de manifestations.                    
                     </p>
                 </div>
 
@@ -56,7 +57,7 @@ const LandingPage = () => {
                     <img src={shark} className="icone" alt="icone de requin"/>
                     <h3 className="h3-blue-bold"> Sensibilisation </h3>
                     <p className="paragraph-description-white-centered">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.                    
+                        Nous organisons des actions de sensibilisation sur la captivité des animaux et la pollution marine.                  
                     </p>
                 </div>
 
