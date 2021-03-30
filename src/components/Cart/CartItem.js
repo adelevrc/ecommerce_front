@@ -1,8 +1,7 @@
 import React from 'react'; 
 import '../../styles/Cart.scss'; 
-import Counter from '../Products/Counter';
 
-const CartItem = ({cart, setCart,  item,  price, title, image, count, setCount, decrement, increment}) => {
+const CartItem = ({cart, setCart,  item,  price, title, image}) => {
 
     const deleteHandler = () => {
       let selectedCartItems = cart.filter((el) => el._id !== item._id);
@@ -16,14 +15,6 @@ const CartItem = ({cart, setCart,  item,  price, title, image, count, setCount, 
                 <div className="div-cart-title-price">
                     <h2> {title} </h2>
                     <h3> {price} € </h3>
-
-                    <Counter 
-                    count={count}
-                    setCount={setCount}
-                    decrement={decrement}
-                    increment={increment}
-                    item={item}
-                    />  
 
                     <div className="cart-btn-container"> 
                         <button className="btn-cart" > Voir le produit </button>

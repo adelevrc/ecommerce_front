@@ -53,12 +53,8 @@ const Orders = () => {
         <div>
             {datas.map((product) =>
             <div className="div-orders" key={uuidv4()}>
-                    <figure>
-                    <img className="img-orders" src={product.image} alt={product.title}/>
-                    </figure>
                     <div className="details-orders">
-                        <h3>{product.title}</h3>
-                        <h4 className="bold-h4">{product.price} €</h4>
+                        <h3>{product.title} - {product.price} € </h3>
                     </div>
             </div>
                 )

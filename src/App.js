@@ -41,6 +41,7 @@ function App() {
     numberOfCartItems() 
   }, [cart])
 
+
   const numberOfCartItems = () =>{
     return cart.length;
   }
@@ -91,10 +92,7 @@ function App() {
             <CartList 
             cart={cart}
             setCart={setCart}
-            count={count}
-            setCount={setCount}
-            increment={increment}
-            decrement={decrement}
+            localCart={localCart}
             />
           </Route>
 
