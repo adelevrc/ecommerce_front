@@ -16,17 +16,12 @@ function AddAnimal() {
   const userToken = JSON.parse(tokenString);
   
   const [formData, setFormData] = useReducer(formReducer, {});
-  const [submitting, setSubmitting] = useState(false);
   const history = useHistory();
 
   const handleSubmit = event => {
     event.preventDefault();
-    setSubmitting(true);
 
-    setTimeout(() => {
-      setSubmitting(false);
-    }, 3000)
-    
+   
     const API_URL = process.env.REACT_APP_API_URL;
 
     axios.post(`${API_URL}/animals`, formData, 

@@ -25,8 +25,7 @@ const Animal = ({ match }) => {
                 <img src={animal.image} alt={animal.name}/>
                 <p> {animal.description}</p>                      
             </div>
-    </div>
-
+        </div>
     )
 }
 

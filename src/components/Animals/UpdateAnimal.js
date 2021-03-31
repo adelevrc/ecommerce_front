@@ -29,7 +29,7 @@ export default class UpdateAnimal extends React.Component {
         e.persist();
         this.setState(animal => ({
           item: { ...animal.item,  
-            [e.target.name]: e.target.value,  }, 
+          [e.target.name]: e.target.value}, 
         })
         )
       }
@@ -46,9 +46,10 @@ export default class UpdateAnimal extends React.Component {
         .then(res => {
           console.log(res); 
         })
-        .then(this.props.history.push('/animals'))
-        .then(alert("Animal modifié avec succés "))
         .catch(err => console.log(err));
+        
+        this.props.history.push('/animals');
+        alert("Animal modifié avec succés ");
       }
 
 

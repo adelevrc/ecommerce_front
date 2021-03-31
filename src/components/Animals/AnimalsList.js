@@ -43,11 +43,11 @@ const AnimalsList = () => {
         {
             headers:{'Authorization': 'Bearer ' + userToken.token}
         })
-        refreshProductsPage(); 
+        refreshPage(); 
     }
 
-    const refreshProductsPage = () => {
-        setAnimals(animals => [...animals]);
+    const refreshPage = () => {
+        window.location.reload();
     }
 
     return(

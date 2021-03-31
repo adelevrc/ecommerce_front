@@ -2,11 +2,13 @@ import React, {useState, useEffect} from 'react';
 import CartItem from './CartItem'; 
 import { v4 as uuidv4 } from "uuid";
 import axios from 'axios'; 
+import { useHistory } from "react-router-dom";
 import '../../styles/Cart.scss'
 import '../../styles/Popup.scss'; 
 
 
-const CartList = ({ cart, setCart,localCart}) => {
+const CartList = ({ cart, setCart}) => {
+    const history = useHistory();
 
     useEffect(() => {
         retrieveProductId()
@@ -39,14 +41,22 @@ const CartList = ({ cart, setCart,localCart}) => {
     }
 
     const addCheckout = () => {
-        axios.post(`${API_URL}/orders`, { 
-            products: productId, 
-            user: localStorageToken.userId 
-        })
-        .then(localStorage.removeItem('productCart'))
-        .then(alert('Félicitation pour votre commande'))
-        .then( window.location.reload())
-        .catch (err => console.log(err)); 
+
+        if (localStorageToken === null){
+            alert('vous devez créer un compte pour pouvoir commander'); 
+            history.push("/authentification");
+
+        } else {
+            axios.post(`${API_URL}/orders`, { 
+                products: productId, 
+                user: localStorageToken.userId 
+            })
+            .then(localStorage.removeItem('productCart'))
+            .then(alert('Félicitation pour votre commande'))
+            .then( window.location.reload())
+            .catch (err => console.log(err)); 
+        }
+      
     }
 
     if(cart === null){

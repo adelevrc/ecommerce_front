@@ -14,7 +14,7 @@ const Register = () => {
             password: userPasswordReg 
         })
         .then((res) => {
-            console.log(res); 
+            console.log("ok"); 
         })
     }
 

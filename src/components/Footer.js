@@ -16,7 +16,7 @@ const Footer = () => {
                     <h5> Boutique </h5>
                 </Link>
                 <Link to={"/animals"}>
-                    <h5> Rescapés </h5>
+                    <h5> Animaux </h5>
                 </Link>
             </div>
 

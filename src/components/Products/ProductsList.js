@@ -17,7 +17,7 @@ const Products = ({addToCart}) => {
             setProducts(data.data); 
         })
         .catch (err => console.log(err)); 
-    }, [products, API_URL])
+    }, [API_URL])
 
     useEffect(() =>{
         if(localStorage.getItem('token') != null)
@@ -41,11 +41,11 @@ const Products = ({addToCart}) => {
         {
             headers:{'Authorization': 'Bearer ' + userToken.token}
         })
-        refreshProductsPage(); 
+        refreshPage(); 
     }
 
-    const refreshProductsPage = () => {
-        setProducts(products => [...products]);
+    const refreshPage = () => {
+        window.location.reload();
     }
  
     return(
