@@ -1,6 +1,7 @@
 footer {
     display: grid; 
     min-height: 20vh;
+    max-height: 20vh;
     grid-template-columns: 33.33% 33.33% 33.33%;
     justify-items: center;
     background-color: #172A3A;
@@ -61,5 +62,15 @@ footer {
        a:hover{
            text-decoration: underline;
        }
+}
+}
+
+@media screen and (min-width: 1200px) {
+
+    footer {
+
+        min-height: 15vh;
+        max-height: 15vh;
+       
 }
 }

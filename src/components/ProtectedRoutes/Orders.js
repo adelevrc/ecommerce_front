@@ -34,6 +34,10 @@ const Orders = () => {
         let dataElements = [];
         for (let i = 0; i < productsOrdered.length; i++){
             const dataElement = productsOrdered[i];
+            console.log('coucou');
+            console.log(productsOrdered[i]);
+            console.log("salut");
+            console.log(dataElement);
             setDatas(dataElement); 
 
             for (let j = 0;j < dataElement.length; j++){
