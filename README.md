@@ -2,9 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).\
 
-Design and code by myself
-Admin protected routes, public routes and registered customer route. \
-Auth with token \
+Design and code by myself. 
+Admin protected routes, public routes and registered customer route.\
+Auth with token.
 
 
 ## Available Scripts
