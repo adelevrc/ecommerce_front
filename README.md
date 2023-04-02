@@ -6,6 +6,8 @@ Auth with token.
 
 ## Technos : 
 - React 
+- Redux
+- Axios
 
 
 ## Available Scripts
